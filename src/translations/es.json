@@ -695,5 +695,90 @@
     "privacy_modal": {
       "title": "Política de Privacidad"
     }
+  },
+  "vehicle_detail": {
+    "breadcrumb": {
+      "back_to_stock": "Volver al stock"
+    },
+    "actions": {
+      "share": "Compartir",
+      "link_copied": "Enlace copiado al portapapeles",
+      "call_now": "Llamar ahora",
+      "schedule_appointment": "Agendar cita"
+    },
+    "pricing": {
+      "label": "Precio"
+    },
+    "reserve": {
+      "title": "Reservar vehículo",
+      "description": "Reserva el vehículo para asegurarte de que no te lo quiten, y nos pondremos en contacto contigo para ayudarte con todo el proceso de compra.",
+      "button": "Reservar ahora",
+      "modal_title": "Reservar",
+      "success": "¡Reserva confirmada! Nos pondremos en contacto contigo pronto."
+    },
+    "appointment": {
+      "modal_title": "Reserva tu cita en INFINIT Cars",
+      "date_label": "Fecha de la cita",
+      "time_label": "Hora",
+      "time_placeholder": "Selecciona una hora",
+      "message_placeholder": "Estoy interesado en",
+      "success": "¡Cita agendada! Nos pondremos en contacto contigo pronto."
+    },
+    "contact": {
+      "title": "Quiero más información de este coche",
+      "message_placeholder": "Estoy interesado en",
+      "success_title": "¡Mensaje enviado con éxito!",
+      "success_description": "Gracias por tu interés. Nos pondremos en contacto contigo pronto.",
+      "send_another": "Enviar otro mensaje",
+      "submit_button": "Enviar consulta"
+    },
+    "form": {
+      "name": "Nombre",
+      "name_placeholder": "Nombre",
+      "surname": "Apellido",
+      "surname_placeholder": "Apellido",
+      "email": "Email",
+      "email_placeholder": "xxx@xxx.com",
+      "phone": "Teléfono",
+      "phone_placeholder": "666 666 666",
+      "message": "Mensaje",
+      "message_placeholder_reserve": "Quiero reservar este",
+      "accept_terms": "Acepto las comunicaciones comerciales y de ofertas. Acepto la",
+      "privacy_policy": "política de privacidad",
+      "submit": "Enviar",
+      "submitting": "Enviando...",
+      "confirm_reservation": "Confirmar reserva"
+    },
+    "details": {
+      "title": "Detalles",
+      "financing": "Financiación a tu medida.",
+      "warranty": "En precio de venta están incluidos 12 meses de garantía. (Ampliable a 3 años)",
+      "transfer_costs": "Gastos de transferencia y gestor",
+      "trade_in": "Aceptamos vehículo como parte de pago.",
+      "delivery": "Entrega en toda España, consulte condiciones."
+    },
+    "specifications": {
+      "title": "Especificaciones",
+      "year": "AÑO",
+      "mileage": "KILÓMETROS",
+      "fuel": "COMBUSTIBLE",
+      "transmission": "CAMBIO",
+      "body_type": "CARROCERÍA",
+      "color": "COLOR",
+      "doors": "PUERTAS",
+      "seats": "ASIENTOS",
+      "engine_size": "CILINDRADA",
+      "engine_power": "POTENCIA",
+      "environmental_badge": "DISTINTIVO AMBIENTAL"
+    },
+    "gallery": {
+      "view_label": "Vista"
+    },
+    "errors": {
+      "privacy_required": "Debes aceptar la política de privacidad",
+      "appointment_error": "Hubo un problema al agendar la cita. Por favor, inténtalo de nuevo.",
+      "reservation_error": "Hubo un problema al enviar la reserva. Por favor, inténtalo de nuevo.",
+      "contact_error": "Hubo un problema al enviar la consulta. Por favor, inténtalo de nuevo."
+    }
   }
 }

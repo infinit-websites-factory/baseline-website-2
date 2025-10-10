@@ -133,10 +133,10 @@ const VehicleDetail = () => {
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
-    toast.success("Enlace copiado al portapapeles");
+    toast.success(t('vehicle_detail.actions.link_copied'));
   };
   const handleReserve = () => {
-    toast.success("¡Vehículo reservado! Nos pondremos en contacto contigo pronto.");
+    toast.success(t('vehicle_detail.reserve.success'));
   };
 
   const handleReservationSubmit = async (e: React.FormEvent) => {
@@ -144,7 +144,7 @@ const VehicleDetail = () => {
     if (!reservationFormData.acceptTerms) {
       toastHook({
         title: "Error",
-        description: "Debes aceptar la política de privacidad",
+        description: t('vehicle_detail.errors.privacy_required'),
         variant: "destructive"
       });
       return;
@@ -174,7 +174,7 @@ const VehicleDetail = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      toast.success("¡Reserva confirmada! Nos pondremos en contacto contigo pronto.");
+      toast.success(t('vehicle_detail.reserve.success'));
       setIsReservationModalOpen(false);
       setReservationFormData({
         nombre: "",
@@ -188,7 +188,7 @@ const VehicleDetail = () => {
       console.error('Error submitting reservation:', error);
       toastHook({
         title: "Error",
-        description: "Hubo un problema al enviar la reserva. Por favor, inténtalo de nuevo.",
+        description: t('vehicle_detail.errors.reservation_error'),
         variant: "destructive"
       });
     } finally {
@@ -201,7 +201,7 @@ const VehicleDetail = () => {
     if (!appointmentFormData.acceptTerms) {
       toastHook({
         title: "Error",
-        description: "Debes aceptar la política de privacidad",
+        description: t('vehicle_detail.errors.privacy_required'),
         variant: "destructive"
       });
       return;
@@ -235,7 +235,7 @@ const VehicleDetail = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      toast.success("¡Cita agendada! Nos pondremos en contacto contigo pronto.");
+      toast.success(t('vehicle_detail.appointment.success'));
       setIsAppointmentModalOpen(false);
       setAppointmentFormData({
         nombre: "",
@@ -251,7 +251,7 @@ const VehicleDetail = () => {
       console.error('Error submitting appointment:', error);
       toastHook({
         title: "Error",
-        description: "Hubo un problema al agendar la cita. Por favor, inténtalo de nuevo.",
+        description: t('vehicle_detail.errors.appointment_error'),
         variant: "destructive"
       });
     } finally {
@@ -298,7 +298,7 @@ const VehicleDetail = () => {
       console.error('Error submitting contact:', error);
       toastHook({
         title: "Error",
-        description: "Hubo un problema al enviar la consulta. Por favor, inténtalo de nuevo.",
+        description: t('vehicle_detail.errors.contact_error'),
         variant: "destructive"
       });
     } finally {
@@ -313,7 +313,7 @@ const VehicleDetail = () => {
         <nav className="mb-6">
           <Button variant="ghost" onClick={() => navigate('/stock')} className="p-0 h-auto text-muted-foreground hover:text-muted-foreground hover:bg-transparent">
             <ChevronLeft className="w-4 h-4 mr-1" />
-            Volver al stock
+            {t('vehicle_detail.breadcrumb.back_to_stock')}
           </Button>
         </nav>
 
@@ -332,7 +332,7 @@ const VehicleDetail = () => {
           </div>
           <Button variant="outline" size="sm" onClick={handleShare} className="flex items-center gap-2">
             <Share2 className="w-4 h-4" />
-            Compartir
+            {t('vehicle_detail.actions.share')}
           </Button>
         </div>
 
@@ -360,23 +360,23 @@ const VehicleDetail = () => {
             {/* Thumbnail Navigation */}
             {vehicle.images.length > 1 && <div className="grid grid-cols-5 gap-2">
                 {vehicle.images.slice(0, 5).map((image, index) => <button key={index} onClick={() => setCurrentImageIndex(index)} className={`aspect-video rounded overflow-hidden border-2 transition-colors ${currentImageIndex === index ? 'border-primary' : 'border-transparent hover:border-muted-foreground'}`}>
-                    <img src={image} alt={`Vista ${index + 1}`} className="w-full h-full object-cover" />
+                    <img src={image} alt={`${t('vehicle_detail.gallery.view_label')} ${index + 1}`} className="w-full h-full object-cover" />
                   </button>)}
               </div>}
 
             {/* Vehicle Description */}
             <Card>
               <CardHeader className="bg-muted">
-                <CardTitle>Detalles</CardTitle>
+                <CardTitle>{t('vehicle_detail.details.title')}</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-3 text-sm">
                   <p><strong>{vehicle.brand} {vehicle.model}</strong></p>
-                  <p>Financiación a tu medida.</p>
-                  <p>En precio de venta están incluidos 12 meses de garantía. (Ampliable a 3 años)</p>
-                  <p>Gastos de transferencia y gestor {formatPrice(260)}.</p>
-                  <p>Aceptamos vehículo como parte de pago.</p>
-                  <p>Entrega en toda España, consulte condiciones.</p>
+                  <p>{t('vehicle_detail.details.financing')}</p>
+                  <p>{t('vehicle_detail.details.warranty')}</p>
+                  <p>{t('vehicle_detail.details.transfer_costs')} {formatPrice(260)}.</p>
+                  <p>{t('vehicle_detail.details.trade_in')}</p>
+                  <p>{t('vehicle_detail.details.delivery')}</p>
                 </div>
               </CardContent>
             </Card>
@@ -384,52 +384,52 @@ const VehicleDetail = () => {
             {/* Basic Data */}
             <Card>
               <CardHeader className="bg-muted">
-                <CardTitle>Especificaciones</CardTitle>
+                <CardTitle>{t('vehicle_detail.specifications.title')}</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <div className="text-muted-foreground mb-1">AÑO</div>
+                    <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.year')}</div>
                     <div className="font-semibold">{vehicle.year}</div>
                   </div>
                   <div>
-                    <div className="text-muted-foreground mb-1">KILÓMETROS</div>
+                    <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.mileage')}</div>
                     <div className="font-semibold">{vehicle.mileage.toLocaleString()}</div>
                   </div>
                   <div>
-                    <div className="text-muted-foreground mb-1">COMBUSTIBLE</div>
+                    <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.fuel')}</div>
                     <div className="font-semibold">{translateVehicleAttribute('fuel', vehicle.fuel).toUpperCase()}</div>
                   </div>
                   <div>
-                    <div className="text-muted-foreground mb-1">CAMBIO</div>
+                    <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.transmission')}</div>
                     <div className="font-semibold">{translateVehicleAttribute('transmission', vehicle.transmission).toUpperCase()}</div>
                   </div>
                   <div>
-                    <div className="text-muted-foreground mb-1">CARROCERÍA</div>
+                    <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.body_type')}</div>
                     <div className="font-semibold">{translateVehicleAttribute('body_type', vehicle.type).toUpperCase()}</div>
                   </div>
                   {vehicle.color && <div>
-                      <div className="text-muted-foreground mb-1">COLOR</div>
+                      <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.color')}</div>
                       <div className="font-semibold">{translateVehicleAttribute('color', vehicle.color).toUpperCase()}</div>
                     </div>}
                   {vehicle.doors && <div>
-                      <div className="text-muted-foreground mb-1">PUERTAS</div>
+                      <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.doors')}</div>
                       <div className="font-semibold">{vehicle.doors}</div>
                     </div>}
                   {vehicle.seats && <div>
-                      <div className="text-muted-foreground mb-1">ASIENTOS</div>
+                      <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.seats')}</div>
                       <div className="font-semibold">{vehicle.seats}</div>
                     </div>}
                   {vehicle.engineSize && <div>
-                      <div className="text-muted-foreground mb-1">CILINDRADA</div>
+                      <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.engine_size')}</div>
                       <div className="font-semibold">{vehicle.engineSize} cc</div>
                     </div>}
                   {vehicle.enginePower && <div>
-                      <div className="text-muted-foreground mb-1">POTENCIA</div>
+                      <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.engine_power')}</div>
                       <div className="font-semibold">{vehicle.enginePower} CV</div>
                     </div>}
                   {badgeImage && <div>
-                      <div className="text-muted-foreground mb-1">DISTINTIVO AMBIENTAL</div>
+                      <div className="text-muted-foreground mb-1">{t('vehicle_detail.specifications.environmental_badge')}</div>
                       <div className="font-semibold">
                         <img src={badgeImage} alt={`Badge ${vehicle.environmentalBadge}`} className="w-12 h-12" />
                       </div>
@@ -443,7 +443,7 @@ const VehicleDetail = () => {
           <div className="space-y-6 sticky top-8 self-start">
             {/* Pricing */}
             <div>
-              <div className="text-sm text-muted-foreground mb-2">Precio</div>
+              <div className="text-sm text-muted-foreground mb-2">{t('vehicle_detail.pricing.label')}</div>
               <div className="text-3xl font-bold text-primary mb-4">
                 {formatPrice(vehicle.price)}
               </div>
@@ -454,31 +454,30 @@ const VehicleDetail = () => {
               <CardContent className="p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-2 h-2 bg-primary-foreground rounded-full"></div>
-                  <span className="font-semibold">Reservar vehículo</span>
+                  <span className="font-semibold">{t('vehicle_detail.reserve.title')}</span>
                 </div>
                 <p className="text-sm mb-4 opacity-90">
-                  Reserva el vehículo para asegurarte de que no te lo quiten, y
-                  nos pondremos en contacto contigo para ayudarte con todo el proceso de compra.
+                  {t('vehicle_detail.reserve.description')}
                 </p>
                 <Dialog open={isReservationModalOpen} onOpenChange={setIsReservationModalOpen}>
                   <DialogTrigger asChild>
                     <Button variant="secondary" className="w-full">
-                      Reservar ahora
+                      {t('vehicle_detail.reserve.button')}
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-md bg-background">
                     <DialogHeader>
                       <DialogTitle className="text-lg font-semibold text-foreground">
-                        Reservar {vehicle.brand} {vehicle.model}
+                        {t('vehicle_detail.reserve.modal_title')} {vehicle.brand} {vehicle.model}
                       </DialogTitle>
                     </DialogHeader>
                     <form onSubmit={handleReservationSubmit} className="space-y-6 mt-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="reservationName" className="text-gray-600">Nombre</Label>
+                          <Label htmlFor="reservationName" className="text-gray-600">{t('vehicle_detail.form.name')}</Label>
                           <Input
                             id="reservationName"
-                            placeholder="Nombre"
+                            placeholder={t('vehicle_detail.form.name_placeholder')}
                             required
                             className="bg-gray-50 border-gray-200"
                             value={reservationFormData.nombre}
@@ -486,10 +485,10 @@ const VehicleDetail = () => {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="reservationSurname" className="text-gray-600">Apellido</Label>
+                          <Label htmlFor="reservationSurname" className="text-gray-600">{t('vehicle_detail.form.surname')}</Label>
                           <Input
                             id="reservationSurname"
-                            placeholder="Apellido"
+                            placeholder={t('vehicle_detail.form.surname_placeholder')}
                             required
                             className="bg-gray-50 border-gray-200"
                             value={reservationFormData.apellido}
@@ -500,11 +499,11 @@ const VehicleDetail = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="reservationEmail" className="text-gray-600">Email</Label>
+                          <Label htmlFor="reservationEmail" className="text-gray-600">{t('vehicle_detail.form.email')}</Label>
                           <Input
                             id="reservationEmail"
                             type="email"
-                            placeholder="xxx@xxx.com"
+                            placeholder={t('vehicle_detail.form.email_placeholder')}
                             required
                             className="bg-gray-50 border-gray-200"
                             value={reservationFormData.email}
@@ -512,14 +511,14 @@ const VehicleDetail = () => {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="reservationPhone" className="text-gray-600">Teléfono</Label>
+                          <Label htmlFor="reservationPhone" className="text-gray-600">{t('vehicle_detail.form.phone')}</Label>
                           <div className="flex">
                             <div className="flex items-center px-3 bg-gray-50 border border-r-0 border-gray-200 rounded-l-md">
                               <span className="text-sm text-red-600 font-semibold">{getFlag()}</span>
                             </div>
                             <Input
                               id="reservationPhone"
-                              placeholder="666 666 666"
+                              placeholder={t('vehicle_detail.form.phone_placeholder')}
                               className="bg-gray-50 border-gray-200 rounded-l-none"
                               required
                               value={reservationFormData.telefono}
@@ -530,10 +529,10 @@ const VehicleDetail = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="reservationMessage" className="text-gray-600">Mensaje</Label>
+                        <Label htmlFor="reservationMessage" className="text-gray-600">{t('vehicle_detail.form.message')}</Label>
                         <Textarea
                           id="reservationMessage"
-                          placeholder={`Quiero reservar este ${vehicle.brand} ${vehicle.model}`}
+                          placeholder={`${t('vehicle_detail.form.message_placeholder_reserve')} ${vehicle.brand} ${vehicle.model}`}
                           className="min-h-[80px] resize-none bg-gray-50 border-gray-200"
                           required
                           rows={5}
@@ -551,15 +550,15 @@ const VehicleDetail = () => {
                           onCheckedChange={(checked) => setReservationFormData({ ...reservationFormData, acceptTerms: checked as boolean })}
                         />
                         <Label htmlFor="reservationTerms" className="text-sm text-gray-600">
-                          Acepto las comunicaciones comerciales y de ofertas. Acepto la{" "}
+                          {t('vehicle_detail.form.accept_terms')}{" "}
                           <button type="button" onClick={() => setOpenPrivacyModal(true)} className="text-primary hover:text-primary/80 underline cursor-pointer">
-                            política de privacidad
+                            {t('vehicle_detail.form.privacy_policy')}
                           </button>.
                         </Label>
                       </div>
 
                       <Button type="submit" disabled={isSubmittingReservation} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3">
-                        {isSubmittingReservation ? "Enviando..." : "Confirmar reserva"}
+                        {isSubmittingReservation ? t('vehicle_detail.form.submitting') : t('vehicle_detail.form.confirm_reservation')}
                       </Button>
                     </form>
                   </DialogContent>
@@ -572,29 +571,29 @@ const VehicleDetail = () => {
               <Button variant="outline" className="flex items-center gap-2" asChild>
                 <a href={`tel:${getPhoneNumber()}`}>
                   <Phone className="w-4 h-4" />
-                  Llamar ahora
+                  {t('vehicle_detail.actions.call_now')}
                 </a>
               </Button>
               <Dialog open={isAppointmentModalOpen} onOpenChange={setIsAppointmentModalOpen}>
                 <DialogTrigger asChild>
                   <Button variant="outline" className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    Agendar cita
+                    {t('vehicle_detail.actions.schedule_appointment')}
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md bg-background">
                   <DialogHeader>
                     <DialogTitle className="text-lg font-semibold text-foreground">
-                      Reserva tu cita en INFINIT Cars
+                      {t('vehicle_detail.appointment.modal_title')}
                     </DialogTitle>
                   </DialogHeader>
                   <form onSubmit={handleAppointmentSubmit} className="space-y-6 mt-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="appointmentName" className="text-gray-600">Nombre</Label>
+                        <Label htmlFor="appointmentName" className="text-gray-600">{t('vehicle_detail.form.name')}</Label>
                         <Input
                           id="appointmentName"
-                          placeholder="Nombre"
+                          placeholder={t('vehicle_detail.form.name_placeholder')}
                           required
                           className="bg-gray-50 border-gray-200"
                           value={appointmentFormData.nombre}
@@ -602,10 +601,10 @@ const VehicleDetail = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="appointmentSurname" className="text-gray-600">Apellido</Label>
+                        <Label htmlFor="appointmentSurname" className="text-gray-600">{t('vehicle_detail.form.surname')}</Label>
                         <Input
                           id="appointmentSurname"
-                          placeholder="Apellido"
+                          placeholder={t('vehicle_detail.form.surname_placeholder')}
                           required
                           className="bg-gray-50 border-gray-200"
                           value={appointmentFormData.apellido}
@@ -616,11 +615,11 @@ const VehicleDetail = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="appointmentEmail" className="text-gray-600">Email</Label>
+                        <Label htmlFor="appointmentEmail" className="text-gray-600">{t('vehicle_detail.form.email')}</Label>
                         <Input
                           id="appointmentEmail"
                           type="email"
-                          placeholder="xxx@xxx.com"
+                          placeholder={t('vehicle_detail.form.email_placeholder')}
                           required
                           className="bg-gray-50 border-gray-200"
                           value={appointmentFormData.email}
@@ -628,14 +627,14 @@ const VehicleDetail = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="appointmentPhone" className="text-gray-600">Teléfono</Label>
+                        <Label htmlFor="appointmentPhone" className="text-gray-600">{t('vehicle_detail.form.phone')}</Label>
                         <div className="flex">
                           <div className="flex items-center px-3 bg-gray-50 border border-r-0 border-gray-200 rounded-l-md">
                             <span className="text-sm text-red-600 font-semibold">{getFlag()}</span>
                           </div>
                           <Input
                             id="appointmentPhone"
-                            placeholder="666 666 666"
+                            placeholder={t('vehicle_detail.form.phone_placeholder')}
                             className="bg-gray-50 border-gray-200 rounded-l-none"
                             required
                             value={appointmentFormData.telefono}
@@ -647,7 +646,7 @@ const VehicleDetail = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="appointmentDate" className="text-gray-600">Fecha de la cita</Label>
+                        <Label htmlFor="appointmentDate" className="text-gray-600">{t('vehicle_detail.appointment.date_label')}</Label>
                         <Input
                           id="appointmentDate"
                           type="date"
@@ -658,14 +657,14 @@ const VehicleDetail = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="appointmentTime" className="text-gray-600">Hora</Label>
+                        <Label htmlFor="appointmentTime" className="text-gray-600">{t('vehicle_detail.appointment.time_label')}</Label>
                         <Select
                           required
                           value={appointmentFormData.hora}
                           onValueChange={(value) => setAppointmentFormData({ ...appointmentFormData, hora: value })}
                         >
                           <SelectTrigger className="bg-gray-50 border-gray-200 text-gray-900 data-[placeholder]:text-gray-500">
-                            <SelectValue placeholder="Selecciona una hora" />
+                            <SelectValue placeholder={t('vehicle_detail.appointment.time_placeholder')} />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="09:00">09:00</SelectItem>
@@ -688,10 +687,10 @@ const VehicleDetail = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="appointmentMessage" className="text-gray-600">Mensaje</Label>
+                      <Label htmlFor="appointmentMessage" className="text-gray-600">{t('vehicle_detail.form.message')}</Label>
                       <Textarea
                         id="appointmentMessage"
-                        placeholder={`Estoy interesado en ${vehicle.brand} ${vehicle.model}`}
+                        placeholder={`${t('vehicle_detail.appointment.message_placeholder')} ${vehicle.brand} ${vehicle.model}`}
                         className="min-h-[80px] resize-none bg-gray-50 border-gray-200"
                         required
                         rows={5}
@@ -709,15 +708,15 @@ const VehicleDetail = () => {
                         onCheckedChange={(checked) => setAppointmentFormData({ ...appointmentFormData, acceptTerms: checked as boolean })}
                       />
                       <Label htmlFor="appointmentTerms" className="text-sm text-gray-600">
-                        Acepto las comunicaciones comerciales y de ofertas. Acepto la{" "}
+                        {t('vehicle_detail.form.accept_terms')}{" "}
                         <button type="button" onClick={() => setOpenPrivacyModal(true)} className="text-primary hover:text-primary/80 underline cursor-pointer">
-                          política de privacidad
+                          {t('vehicle_detail.form.privacy_policy')}
                         </button>.
                       </Label>
                     </div>
 
                     <Button type="submit" disabled={isSubmittingAppointment} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3">
-                      {isSubmittingAppointment ? "Enviando..." : "Enviar"}
+                      {isSubmittingAppointment ? t('vehicle_detail.form.submitting') : t('vehicle_detail.form.submit')}
                     </Button>
                   </form>
                 </DialogContent>
@@ -728,7 +727,7 @@ const VehicleDetail = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">
-                  Quiero más información de este coche
+                  {t('vehicle_detail.contact.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -740,10 +739,10 @@ const VehicleDetail = () => {
                       </svg>
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-3">
-                      ¡Mensaje enviado con éxito!
+                      {t('vehicle_detail.contact.success_title')}
                     </h3>
                     <p className="text-muted-foreground mb-6">
-                      Gracias por tu interés. Nos pondremos en contacto contigo pronto.
+                      {t('vehicle_detail.contact.success_description')}
                     </p>
                     <Button
                       onClick={() => {
@@ -751,51 +750,51 @@ const VehicleDetail = () => {
                       }}
                       variant="outline"
                     >
-                      Enviar otro mensaje
+                      {t('vehicle_detail.contact.send_another')}
                     </Button>
                   </div>
                 ) : (
                   <form onSubmit={handleContactSubmit} className="space-y-4">
                     <div>
-                      <Label htmlFor="name">Nombre</Label>
+                      <Label htmlFor="name">{t('vehicle_detail.form.name')}</Label>
                       <Input
                         id="name"
-                        placeholder="Nombre"
+                        placeholder={t('vehicle_detail.form.name_placeholder')}
                         required
                         value={contactFormData.nombre}
                         onChange={(e) => setContactFormData({ ...contactFormData, nombre: e.target.value })}
                       />
                     </div>
                     <div>
-                      <Label htmlFor="surname">Apellido</Label>
+                      <Label htmlFor="surname">{t('vehicle_detail.form.surname')}</Label>
                       <Input
                         id="surname"
-                        placeholder="Apellido"
+                        placeholder={t('vehicle_detail.form.surname_placeholder')}
                         required
                         value={contactFormData.apellido}
                         onChange={(e) => setContactFormData({ ...contactFormData, apellido: e.target.value })}
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="email">{t('vehicle_detail.form.email')}</Label>
                       <Input
                         id="email"
                         type="email"
-                        placeholder="email@gmail.com"
+                        placeholder={t('vehicle_detail.form.email_placeholder')}
                         required
                         value={contactFormData.email}
                         onChange={(e) => setContactFormData({ ...contactFormData, email: e.target.value })}
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone">Teléfono</Label>
+                      <Label htmlFor="phone">{t('vehicle_detail.form.phone')}</Label>
                       <div className="flex">
                         <div className="flex items-center px-3 border border-r-0 border-input rounded-l-md bg-muted text-sm whitespace-nowrap">
                           {getFlag()} {language === "es" ? "+34" : language === "en" ? "+44" : "+33"}
                         </div>
                         <Input
                           id="phone"
-                          placeholder="666 666 666"
+                          placeholder={t('vehicle_detail.form.phone_placeholder')}
                           className="rounded-l-none"
                           required
                           value={contactFormData.telefono}
@@ -804,10 +803,10 @@ const VehicleDetail = () => {
                       </div>
                     </div>
                     <div>
-                      <Label htmlFor="message">Mensaje</Label>
+                      <Label htmlFor="message">{t('vehicle_detail.form.message')}</Label>
                       <Textarea
                         id="message"
-                        placeholder={`Estoy interesado en ${vehicle.brand} ${vehicle.model}`}
+                        placeholder={`${t('vehicle_detail.contact.message_placeholder')} ${vehicle.brand} ${vehicle.model}`}
                         className="min-h-[80px]"
                         required
                         value={contactFormData.mensaje}
@@ -815,7 +814,7 @@ const VehicleDetail = () => {
                       />
                     </div>
                     <Button type="submit" disabled={isSubmittingContact} className="w-full">
-                      {isSubmittingContact ? "Enviando..." : "Enviar consulta"}
+                      {isSubmittingContact ? t('vehicle_detail.form.submitting') : t('vehicle_detail.contact.submit_button')}
                     </Button>
                   </form>
                 )}

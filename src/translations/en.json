@@ -695,5 +695,90 @@
     "privacy_modal": {
       "title": "Privacy Policy"
     }
+  },
+  "vehicle_detail": {
+    "breadcrumb": {
+      "back_to_stock": "Back to stock"
+    },
+    "actions": {
+      "share": "Share",
+      "link_copied": "Link copied to clipboard",
+      "call_now": "Call now",
+      "schedule_appointment": "Schedule appointment"
+    },
+    "pricing": {
+      "label": "Price"
+    },
+    "reserve": {
+      "title": "Reserve vehicle",
+      "description": "Reserve the vehicle to make sure no one else takes it, and we will contact you to help you with the entire purchase process.",
+      "button": "Reserve now",
+      "modal_title": "Reserve",
+      "success": "Reservation confirmed! We will contact you soon."
+    },
+    "appointment": {
+      "modal_title": "Book your appointment at INFINIT Cars",
+      "date_label": "Appointment date",
+      "time_label": "Time",
+      "time_placeholder": "Select a time",
+      "message_placeholder": "I am interested in",
+      "success": "Appointment scheduled! We will contact you soon."
+    },
+    "contact": {
+      "title": "I want more information about this car",
+      "message_placeholder": "I am interested in",
+      "success_title": "Message sent successfully!",
+      "success_description": "Thank you for your interest. We will contact you soon.",
+      "send_another": "Send another message",
+      "submit_button": "Send enquiry"
+    },
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Name",
+      "surname": "Surname",
+      "surname_placeholder": "Surname",
+      "email": "Email",
+      "email_placeholder": "xxx@xxx.com",
+      "phone": "Phone",
+      "phone_placeholder": "666 666 666",
+      "message": "Message",
+      "message_placeholder_reserve": "I want to reserve this",
+      "accept_terms": "I accept commercial communications and offers. I accept the",
+      "privacy_policy": "privacy policy",
+      "submit": "Send",
+      "submitting": "Sending...",
+      "confirm_reservation": "Confirm reservation"
+    },
+    "details": {
+      "title": "Details",
+      "financing": "Financing tailored to you.",
+      "warranty": "The sale price includes 12 months warranty. (Extendable to 3 years)",
+      "transfer_costs": "Transfer and management costs",
+      "trade_in": "We accept vehicles as part payment.",
+      "delivery": "Delivery throughout the UK, please enquire about conditions."
+    },
+    "specifications": {
+      "title": "Specifications",
+      "year": "YEAR",
+      "mileage": "MILEAGE",
+      "fuel": "FUEL",
+      "transmission": "TRANSMISSION",
+      "body_type": "BODY TYPE",
+      "color": "COLOR",
+      "doors": "DOORS",
+      "seats": "SEATS",
+      "engine_size": "ENGINE SIZE",
+      "engine_power": "POWER",
+      "environmental_badge": "ENVIRONMENTAL BADGE"
+    },
+    "gallery": {
+      "view_label": "View"
+    },
+    "errors": {
+      "privacy_required": "You must accept the privacy policy",
+      "appointment_error": "There was a problem scheduling the appointment. Please try again.",
+      "reservation_error": "There was a problem sending the reservation. Please try again.",
+      "contact_error": "There was a problem sending the enquiry. Please try again."
+    }
   }
 }

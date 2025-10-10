@@ -695,5 +695,90 @@
     "privacy_modal": {
       "title": "Politique de confidentialité"
     }
+  },
+  "vehicle_detail": {
+    "breadcrumb": {
+      "back_to_stock": "Retour au stock"
+    },
+    "actions": {
+      "share": "Partager",
+      "link_copied": "Lien copié dans le presse-papiers",
+      "call_now": "Appeler maintenant",
+      "schedule_appointment": "Prendre rendez-vous"
+    },
+    "pricing": {
+      "label": "Prix"
+    },
+    "reserve": {
+      "title": "Réserver le véhicule",
+      "description": "Réservez le véhicule pour vous assurer que personne d'autre ne le prenne, et nous vous contacterons pour vous aider dans tout le processus d'achat.",
+      "button": "Réserver maintenant",
+      "modal_title": "Réserver",
+      "success": "Réservation confirmée ! Nous vous contacterons bientôt."
+    },
+    "appointment": {
+      "modal_title": "Réservez votre rendez-vous chez INFINIT Cars",
+      "date_label": "Date du rendez-vous",
+      "time_label": "Heure",
+      "time_placeholder": "Sélectionnez une heure",
+      "message_placeholder": "Je suis intéressé par",
+      "success": "Rendez-vous programmé ! Nous vous contacterons bientôt."
+    },
+    "contact": {
+      "title": "Je veux plus d'informations sur cette voiture",
+      "message_placeholder": "Je suis intéressé par",
+      "success_title": "Message envoyé avec succès !",
+      "success_description": "Merci de votre intérêt. Nous vous contacterons bientôt.",
+      "send_another": "Envoyer un autre message",
+      "submit_button": "Envoyer la demande"
+    },
+    "form": {
+      "name": "Prénom",
+      "name_placeholder": "Prénom",
+      "surname": "Nom",
+      "surname_placeholder": "Nom",
+      "email": "Email",
+      "email_placeholder": "xxx@xxx.com",
+      "phone": "Téléphone",
+      "phone_placeholder": "06 00 00 00 00",
+      "message": "Message",
+      "message_placeholder_reserve": "Je veux réserver cette",
+      "accept_terms": "J'accepte les communications commerciales et les offres. J'accepte la",
+      "privacy_policy": "politique de confidentialité",
+      "submit": "Envoyer",
+      "submitting": "Envoi en cours...",
+      "confirm_reservation": "Confirmer la réservation"
+    },
+    "details": {
+      "title": "Détails",
+      "financing": "Financement sur mesure.",
+      "warranty": "Le prix de vente comprend 12 mois de garantie. (Extensible à 3 ans)",
+      "transfer_costs": "Frais de transfert et de gestion",
+      "trade_in": "Nous acceptons les véhicules en reprise.",
+      "delivery": "Livraison dans toute la France, renseignez-vous sur les conditions."
+    },
+    "specifications": {
+      "title": "Spécifications",
+      "year": "ANNÉE",
+      "mileage": "KILOMÉTRAGE",
+      "fuel": "CARBURANT",
+      "transmission": "TRANSMISSION",
+      "body_type": "CARROSSERIE",
+      "color": "COULEUR",
+      "doors": "PORTES",
+      "seats": "SIÈGES",
+      "engine_size": "CYLINDRÉE",
+      "engine_power": "PUISSANCE",
+      "environmental_badge": "BADGE ENVIRONNEMENTAL"
+    },
+    "gallery": {
+      "view_label": "Vue"
+    },
+    "errors": {
+      "privacy_required": "Vous devez accepter la politique de confidentialité",
+      "appointment_error": "Un problème est survenu lors de la prise de rendez-vous. Veuillez réessayer.",
+      "reservation_error": "Un problème est survenu lors de l'envoi de la réservation. Veuillez réessayer.",
+      "contact_error": "Un problème est survenu lors de l'envoi de la demande. Veuillez réessayer."
+    }
   }
 }
