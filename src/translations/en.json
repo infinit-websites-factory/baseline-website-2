@@ -174,6 +174,22 @@
     "no_results": "No vehicles found with the selected filters",
     "clear_filters": "Clear filters and see all vehicles"
   },
+  "filters": {
+    "title": "Filters",
+    "clear_filters": "Clear filters",
+    "search_label": "Search",
+    "brand": "Brand",
+    "brand_all": "All brands",
+    "body_type": "Body type",
+    "body_type_all": "All types",
+    "transmission": "Transmission",
+    "transmission_all": "All",
+    "fuel": "Fuel",
+    "fuel_all": "All",
+    "price": "Price",
+    "mileage": "Mileage",
+    "year": "Year"
+  },
   "reviews": {
     "title": "What our customers say about us",
     "google_review": "Google Review",
