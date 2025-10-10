@@ -7,7 +7,8 @@
     "search": "Buscar",
     "send": "Enviar",
     "sending": "Enviando...",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "view_details": "Ver detalles"
   },
   "header": {
     "vehicles": "Vehículos de ocasión",

@@ -37,7 +37,7 @@ const VehicleCard = ({
   type,
   environmentalBadge
 }: VehicleCardProps) => {
-  const { translateVehicleAttribute, formatPrice } = useLanguage();
+  const { translateVehicleAttribute, formatPrice, t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
 
@@ -163,7 +163,7 @@ const VehicleCard = ({
             variant="secondary"
           >
             <Eye size={16} className="mr-2" />
-            Ver detalles
+            {t('common.view_details')}
           </Button>
         </div>
       </CardContent>
