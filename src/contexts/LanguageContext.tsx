@@ -19,6 +19,9 @@ interface LanguageContextType {
   getWhatsAppNumber: () => string;
   getAddress: () => AddressInfo;
   getCityName: () => string;
+  getCurrency: () => string;
+  getCurrencySymbol: () => string;
+  formatPrice: (price: number) => string;
   t: (key: TranslationKey, options?: { returnObjects?: boolean }) => any;
   translateVehicleAttribute: (category: 'fuel' | 'transmission' | 'body_type' | 'color', value: string) => string;
 }
@@ -51,6 +54,12 @@ const ADDRESSES: Record<Language, AddressInfo> = {
     mapsUrl: "https://www.google.com/maps/place/37+Rue+du+Faubourg+Poissonni%C3%A8re,+75009+Paris,+France",
     mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2!2d2.3488!3d48.8738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2s37%20Rue%20du%20Faubourg%20Poissonni%C3%A8re%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890123!5m2!1sen!2sfr"
   }
+};
+
+const CURRENCIES: Record<Language, { code: string; symbol: string }> = {
+  es: { code: "EUR", symbol: "€" },
+  en: { code: "GBP", symbol: "£" },
+  fr: { code: "EUR", symbol: "€" }
 };
 
 const formatPhoneNumber = (phone: string, language: Language): string => {
@@ -123,6 +132,24 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return cityNames[language];
   };
 
+  const getCurrency = () => {
+    return CURRENCIES[language].code;
+  };
+
+  const getCurrencySymbol = () => {
+    return CURRENCIES[language].symbol;
+  };
+
+  const formatPrice = (price: number): string => {
+    const currency = CURRENCIES[language];
+    return new Intl.NumberFormat(language === 'en' ? 'en-GB' : language === 'fr' ? 'fr-FR' : 'es-ES', {
+      style: 'currency',
+      currency: currency.code,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(price);
+  };
+
   const t = (key: TranslationKey, options?: { returnObjects?: boolean }): any => {
     const keys = key.split('.');
     let value: any = translations[language];
@@ -163,7 +190,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, getPhoneNumber, getPhoneNumberWithPrefix, getWhatsAppNumber, getAddress, getCityName, t, translateVehicleAttribute }}>
+    <LanguageContext.Provider value={{ language, setLanguage, getPhoneNumber, getPhoneNumberWithPrefix, getWhatsAppNumber, getAddress, getCityName, getCurrency, getCurrencySymbol, formatPrice, t, translateVehicleAttribute }}>
       {children}
     </LanguageContext.Provider>
   );

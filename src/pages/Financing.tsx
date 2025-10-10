@@ -22,7 +22,7 @@ import { CONTACT_FORM_API_URL, PROFILE_ID, fetchCars, transformApiCarToVehicle, 
 
 const Financing = () => {
   const { toast } = useToast();
-  const { language, getPhoneNumber, getAddress, t } = useLanguage();
+  const { language, getPhoneNumber, getAddress, t, formatPrice } = useLanguage();
   const address = getAddress();
 
   const getFlag = () => {
@@ -264,7 +264,7 @@ const Financing = () => {
 
       if (selectedVehicle) {
         vehicleInfo = `${selectedVehicle.brand} ${selectedVehicle.model} (${selectedVehicle.year})`;
-        priceInfo = `Precio: £${selectedVehicle.price.toLocaleString('en-GB')}`;
+        priceInfo = `Precio: ${formatPrice(selectedVehicle.price)}`;
       }
 
       const message = `SOLICITUD DE FINANCIACIÓN
@@ -274,7 +274,7 @@ ${vehicleInfo}
 ${priceInfo}
 
 === DETALLES DE FINANCIACIÓN ===
-Entrada inicial: £${formData.entradaInicial}
+Entrada inicial: ${formatPrice(parseFloat(formData.entradaInicial))}
 Plazo de pago: ${formData.plazoPago} meses
 
 === DATOS PERSONALES ===
@@ -297,8 +297,8 @@ Población: ${formData.poblacion}
 Situación de empleo: ${formData.situacionEmpleo}
 Antigüedad en empleo: ${formData.antiguedadEmpleo || t('financing_page.form.not_specified')}
 Empresa: ${formData.empresaTrabajo || t('financing_page.form.not_specified')}
-Ingreso neto mensual: £${formData.ingresoNetoMensual}
-Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('financing_page.form.not_specified')}`;
+Ingreso neto mensual: ${formatPrice(parseFloat(formData.ingresoNetoMensual))}
+Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPrice(parseFloat(formData.gastosHipotecaAlquiler)) : t('financing_page.form.not_specified')}`;
 
       const payload = {
         profile_id: PROFILE_ID,
@@ -466,7 +466,7 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                                 <SelectContent className="max-h-[300px]">
                                   {vehicles.map((vehicle) => (
                                     <SelectItem key={vehicle.id} value={vehicle.id}>
-                                      {vehicle.brand} {vehicle.model} ({vehicle.year}) - £{vehicle.price.toLocaleString('en-GB')}
+                                      {vehicle.brand} {vehicle.model} ({vehicle.year}) - {formatPrice(vehicle.price)}
                                     </SelectItem>
                                   ))}
                                 </SelectContent>
@@ -487,7 +487,7 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                                       {vehicle.brand} {vehicle.model} ({vehicle.year})
                                     </h4>
                                     <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                                      <div>{t('financing_page.form.price')}: <span className="font-semibold text-foreground">£{vehicle.price.toLocaleString('en-GB')}</span></div>
+                                      <div>{t('financing_page.form.price')}: <span className="font-semibold text-foreground">{formatPrice(vehicle.price)}</span></div>
                                       <div>{t('stock_page.results_count')}: {vehicle.mileage.toLocaleString('en-GB')}</div>
                                       <div>{t('sell_page.form.fuel')}: {vehicle.fuel}</div>
                                       <div>{t('sell_page.form.transmission')}: {vehicle.transmission}</div>
@@ -525,7 +525,7 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                               <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
                                 <div className="flex justify-between items-center text-sm">
                                   <span className="text-muted-foreground">
-                                    {selectedVehicle.brand} {selectedVehicle.model} · £{vehiclePrice.toLocaleString('en-GB')}
+                                    {selectedVehicle.brand} {selectedVehicle.model} · {formatPrice(vehiclePrice)}
                                   </span>
                                 </div>
                               </div>
@@ -547,7 +547,7 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                                   <div className="flex justify-between items-center">
                                     <Label className="text-gray-600">{t('financing_page.form.down_payment')} *</Label>
                                     <span className="text-lg font-semibold text-primary">
-                                      £{downPayment.toLocaleString('en-GB')}
+                                      {formatPrice(downPayment)}
                                     </span>
                                   </div>
                                   <Slider
@@ -562,8 +562,8 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                                     className="w-full"
                                   />
                                   <div className="flex justify-between text-xs text-muted-foreground">
-                                    <span>£0</span>
-                                    <span>£{maxDownPayment.toLocaleString('en-GB')}</span>
+                                    <span>{formatPrice(0)}</span>
+                                    <span>{formatPrice(maxDownPayment)}</span>
                                   </div>
                                 </div>
 
@@ -586,7 +586,7 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                                   <Label className="text-gray-600">{t('financing_page.form.amount_to_finance')}</Label>
                                   <div className="h-10 px-3 py-2 bg-gray-50 border border-gray-200 rounded-md flex items-center">
                                     <span className="font-bold text-foreground">
-                                      £{loanAmount.toLocaleString('en-GB')}
+                                      {formatPrice(loanAmount)}
                                     </span>
                                   </div>
                                 </div>
@@ -644,11 +644,11 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                               <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
                                 <div className="flex justify-between items-center text-sm">
                                   <span className="text-muted-foreground">
-                                    {selectedVehicle.brand} {selectedVehicle.model} · £{vehiclePrice.toLocaleString('en-GB')}
+                                    {selectedVehicle.brand} {selectedVehicle.model} · {formatPrice(vehiclePrice)}
                                   </span>
                                   {formData.entradaInicial && (
                                     <span className="font-semibold text-primary">
-                                      {t('financing_page.form.financing')}: £{loanAmount.toLocaleString('en-GB')}
+                                      {t('financing_page.form.financing')}: {formatPrice(loanAmount)}
                                     </span>
                                   )}
                                 </div>
@@ -805,11 +805,11 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                               <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
                                 <div className="flex justify-between items-center text-sm">
                                   <span className="text-muted-foreground">
-                                    {selectedVehicle.brand} {selectedVehicle.model} · £{vehiclePrice.toLocaleString('en-GB')}
+                                    {selectedVehicle.brand} {selectedVehicle.model} · {formatPrice(vehiclePrice)}
                                   </span>
                                   {formData.entradaInicial && (
                                     <span className="font-semibold text-primary">
-                                      {t('financing_page.form.financing')}: £{loanAmount.toLocaleString('en-GB')}
+                                      {t('financing_page.form.financing')}: {formatPrice(loanAmount)}
                                     </span>
                                   )}
                                 </div>
@@ -931,11 +931,11 @@ Gastos hipoteca/alquiler mensual: £${formData.gastosHipotecaAlquiler || t('fina
                               <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
                                 <div className="flex justify-between items-center text-sm">
                                   <span className="text-muted-foreground">
-                                    {selectedVehicle.brand} {selectedVehicle.model} · £{vehiclePrice.toLocaleString('en-GB')}
+                                    {selectedVehicle.brand} {selectedVehicle.model} · {formatPrice(vehiclePrice)}
                                   </span>
                                   {formData.entradaInicial && (
                                     <span className="font-semibold text-primary">
-                                      {t('financing_page.form.financing')}: £{loanAmount.toLocaleString('en-GB')}
+                                      {t('financing_page.form.financing')}: {formatPrice(loanAmount)}
                                     </span>
                                   )}
                                 </div>

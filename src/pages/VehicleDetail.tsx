@@ -29,7 +29,7 @@ const VehicleDetail = () => {
   }>();
   const navigate = useNavigate();
   const { toast: toastHook } = useToast();
-  const { language, getPhoneNumber, getAddress, t, translateVehicleAttribute } = useLanguage();
+  const { language, getPhoneNumber, getAddress, t, translateVehicleAttribute, formatPrice, getCurrencySymbol } = useLanguage();
   const address = getAddress();
 
   const getFlag = () => {
@@ -116,13 +116,6 @@ const VehicleDetail = () => {
   };
   const prevImage = () => {
     setCurrentImageIndex(prev => (prev - 1 + vehicle.images.length) % vehicle.images.length);
-  };
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-GB', {
-      style: 'currency',
-      currency: 'GBP',
-      minimumFractionDigits: 0
-    }).format(price);
   };
   const monthlyPayment = Math.round(vehicle.price / 84); // 84 months financing
 
@@ -381,7 +374,7 @@ const VehicleDetail = () => {
                   <p><strong>{vehicle.brand} {vehicle.model}</strong></p>
                   <p>Financiación a tu medida.</p>
                   <p>En precio de venta están incluidos 12 meses de garantía. (Ampliable a 3 años)</p>
-                  <p>Gastos de transferencia y gestor £260.</p>
+                  <p>Gastos de transferencia y gestor {formatPrice(260)}.</p>
                   <p>Aceptamos vehículo como parte de pago.</p>
                   <p>Entrega en toda España, consulte condiciones.</p>
                 </div>

@@ -52,7 +52,7 @@ const VehicleFilters = ({
   transmissions = [],
   fuels = []
 }: VehicleFiltersProps) => {
-  const { t, translateVehicleAttribute } = useLanguage();
+  const { t, translateVehicleAttribute, formatPrice, getCurrencySymbol } = useLanguage();
 
   // Safely access array values with fallbacks
   const safePriceRange = priceRange || [0, 100000];
@@ -179,8 +179,8 @@ const VehicleFilters = ({
                     className="w-full"
                   />
                   <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                    <span>£{safePriceRange[0]?.toLocaleString() || '0'}</span>
-                    <span>{safePriceRange[1] >= 100000 ? '£100,000+' : `£${safePriceRange[1]?.toLocaleString() || '0'}`}</span>
+                    <span>{formatPrice(safePriceRange[0] || 0)}</span>
+                    <span>{safePriceRange[1] >= 100000 ? `${formatPrice(100000)}+` : formatPrice(safePriceRange[1] || 0)}</span>
                   </div>
                 </div>
               </div>

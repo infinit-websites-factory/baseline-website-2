@@ -37,7 +37,7 @@ const VehicleCard = ({
   type,
   environmentalBadge
 }: VehicleCardProps) => {
-  const { translateVehicleAttribute } = useLanguage();
+  const { translateVehicleAttribute, formatPrice } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
 
@@ -140,7 +140,7 @@ const VehicleCard = ({
             <p className="text-muted-foreground text-sm">{year} • {translateVehicleAttribute('body_type', type)}</p>
           </div>
           <div className="text-right">
-            <p className="text-2xl font-bold text-primary">£{price.toLocaleString()}</p>
+            <p className="text-2xl font-bold text-primary">{formatPrice(price)}</p>
           </div>
         </div>
         
