@@ -1,10 +1,27 @@
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import infinitCarsLogo from "@/assets/infinit-cars-logo.png";
+import { useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Header = () => {
   const { getPhoneNumber, t } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navigationLinks = [
+    { href: "/stock", label: t('header.vehicles') },
+    { href: "/sell", label: t('header.sell_your_car') },
+    { href: "/financing", label: t('header.financing') },
+    { href: "/services", label: t('header.services') },
+    { href: "/contact", label: t('header.contact') },
+  ];
 
   return (
     <header className="bg-nav-background text-nav-foreground border-b border-border/10">
@@ -22,32 +39,62 @@ const Header = () => {
             </div>
           </a>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/stock" className="text-nav-foreground hover:text-primary transition-colors">
-              {t('header.vehicles')}
-            </a>
-            <a href="/sell" className="text-nav-foreground hover:text-primary transition-colors">
-              {t('header.sell_your_car')}
-            </a>
-            <a href="/financing" className="text-nav-foreground hover:text-primary transition-colors">
-              {t('header.financing')}
-            </a>
-            <a href="/services" className="text-nav-foreground hover:text-primary transition-colors">
-              {t('header.services')}
-            </a>
-            <a href="/contact" className="text-nav-foreground hover:text-primary transition-colors">
-              {t('header.contact')}
-            </a>
+            {navigationLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-nav-foreground hover:text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Desktop CTA Button */}
           <Button variant="premium" className="hidden md:flex items-center gap-2" asChild>
             <a href={`tel:${getPhoneNumber()}`}>
               <Phone size={16} />
               {t('common.call_now')}
             </a>
           </Button>
+
+          {/* Mobile Menu Button */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden text-nav-foreground hover:text-primary"
+              >
+                <Menu size={24} />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-nav-background text-nav-foreground">
+              <SheetHeader>
+                <SheetTitle className="text-nav-foreground text-left">Menu</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col space-y-6 mt-8">
+                {navigationLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-lg text-nav-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <Button variant="premium" className="w-full items-center gap-2 mt-4" asChild>
+                  <a href={`tel:${getPhoneNumber()}`}>
+                    <Phone size={16} />
+                    {t('common.call_now')}
+                  </a>
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

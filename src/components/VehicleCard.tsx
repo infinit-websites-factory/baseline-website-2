@@ -91,8 +91,12 @@ const VehicleCard = ({
 
   const badgeImage = getBadgeImage(environmentalBadge);
   
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <Link to={`/stock/${id}`} className="block h-full">
+    <Link to={`/stock/${id}`} className="block h-full" onClick={handleClick}>
       <Card className="group overflow-hidden hover:shadow-luxury transition-all duration-300 hover:scale-[1.02] flex flex-col h-full cursor-pointer">
         <div className="relative overflow-hidden">
         {status === 'Reserved' && <ReservedBanner size="small" />}
