@@ -31,7 +31,7 @@ I need you to convert this car dealership website to a new dealership. Make all 
 
 **REQUIREMENTS:**
 1. Replace all instances of "INFINIT Cars" with the new dealership name (keep the Powered by INFINIT in the footer though)
-2. Keep only the ES language and remove the language slector in the footer
+2. Keep only the ES language and remove the language slector in the footer (keep Euro and Km units though)
 3. Use CRUL to download logo (usually from the header) and favicon from the exisiting website and use it to replace the INFINIT ones
 4. Update all contact information (phone, email, address, social media URLS)
 5. Update Google Maps locations (both URL and embed URL)
