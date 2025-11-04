@@ -42,7 +42,8 @@ I need you to convert this car dealership website to a new dealership. Make all 
 9. Update project name in wrangler.toml using the folder name
 10. Update any hardcoded references to the old branding
 11. Update the domain for fetching the stock or submiting a contact form to API_BASE_URL
-12. Use CRUL to read the copy in the homepage of the existing website and update the homepage accordingly.
+12. Use CRUL to read the copy in the homepage of the existing website and update the homepage accordingly
+13. Update api/preview.ts file with the correct Profile ID (line 3) and domain name from the existing website (lines 122, 123, 129, 137-138)
 
 INSTURCTIONS:
 When download or storing the assets of the website, use the src/assets folder
@@ -131,6 +132,7 @@ This prompt will systematically update:
 - `src/index.css` - Primary brand color
 - `index.html` - SEO metadata, title, favicon
 - `wrangler.toml` - Project name
+- `api/preview.ts` - Profile ID and domain for social media preview cards
 
 ### Translations:
 - `src/translations/es.json`
