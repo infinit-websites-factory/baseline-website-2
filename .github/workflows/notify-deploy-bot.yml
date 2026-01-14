@@ -1,23 +1,18 @@
-name: Notify Deploy Bot
-
+name: Notify Make
 on:
   push:
     branches:
       - '**'
-
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Notify deployment bot
+      - name: Send commit info to Make
         run: |
-          curl -X POST https://api.github.com/repos/infinit-websites-factory/infinit-deploy-bot/dispatches \
-            -H "Authorization: Bearer ${{ github.token }}" \
-            -H "Accept: application/vnd.github+json" \
-            -d '{
-              "event_type": "deploy",
-              "client_payload": {
-                "repo": "${{ github.repository }}",
-                "branch": "${{ github.ref_name }}"
-              }
-            }'
+          curl -X POST "https://hook.eu1.make.com/xvyuaszs86fhwsinzd8szuvxqobcfari" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"repo\": \"${{ github.repository }}\",
+              \"branch\": \"${{ github.ref_name }}\",
+              \"commit\": \"${{ github.sha }}\"
+            }"
