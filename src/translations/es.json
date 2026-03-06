@@ -42,7 +42,8 @@
     "send": "Enviar",
     "sending": "Enviando...",
     "close": "Cerrar",
-    "view_details": "Ver detalles"
+    "view_details": "Ver detalles",
+    "menu": "Menú"
   },
   "header": {
     "home": "Inicio",
@@ -64,7 +65,7 @@
     "placeholder": "Buscar por marca, modelo..."
   },
   "services": {
-    "title": "Nuestros servicios en INFINIT Cars",
+    "title": "Nuestros servicios en Luxury Car",
     "subtitle": "Comercialización e importación de vehículos premium a la carta, de ocasión, seminuevos y Km0.",
     "vip": {
       "title": "Servicio VIP",
@@ -83,27 +84,39 @@
   },
   "faq": {
     "title": "Preguntas frecuentes",
-    "subtitle": "Resolvemos las dudas más comunes sobre nuestros servicios",
+    "subtitle": "Todo lo que necesitas saber antes de adquirir tu próximo vehículo premium",
     "questions": {
       "reserve": {
-        "question": "Me gusta un coche, ¿Cómo lo puedo reservar?",
-        "answer": "Selecciona el vehículo que te gusta, pulsa en el botón \"Reservar Vehículo\" y sigue los pasos. ¡Más sencillo que comprarse unos zapatos!"
+        "question": "¿Cómo puedo reservar un vehículo premium?",
+        "answer": "Selecciona el vehículo que te interesa en nuestro catálogo, pulsa en \"Reservar Vehículo\" y sigue los sencillos pasos. Un asesor personal te contactará para gestionar todos los detalles y garantizar una experiencia de compra exclusiva."
       },
       "warranty": {
-        "question": "¿Qué cubren las garantías de nuestros vehículos?",
-        "answer": "La garantía que ofrecemos es de 1 año respetando la legislación actual. Además, ofrecemos la posibilidad de contratar una ampliación de coberturas de hasta 3 años."
+        "question": "¿Qué garantía ofrecéis en vuestros vehículos?",
+        "answer": "Todos nuestros vehículos incluyen una garantía mínima de 12 meses conforme a la legislación vigente. Además, ofrecemos la posibilidad de ampliar la cobertura hasta 3 años, incluyendo motor, caja de cambios, sistema eléctrico y componentes principales. Cada vehículo se entrega con un informe de garantía detallado."
       },
-      "schedule": {
-        "question": "¿Cuál es nuestro horario?",
-        "answer": "Estamos abiertos todo el año de Lunes a Viernes de 10:00 a 14:00 y de 16:00 a 19:00. Los Sábados atendemos con cita previa y los Domingos permanecemos cerrados."
+      "delivery": {
+        "question": "¿Realizáis envíos a toda España?",
+        "answer": "Sí, ofrecemos un servicio de entrega puerta a puerta en toda España. Tu vehículo será transportado en camión cerrado para garantizar que llega en perfectas condiciones. También gestionamos envíos internacionales a Europa bajo consulta."
+      },
+      "financing": {
+        "question": "¿Qué opciones de financiación tenéis disponibles?",
+        "answer": "Trabajamos con las principales entidades financieras para ofrecerte condiciones competitivas adaptadas a tu perfil. Ofrecemos financiación desde 12 hasta 96 meses, con o sin entrada inicial. Nuestro equipo financiero te asesora sin compromiso para encontrar la mejor opción para ti."
       },
       "quality": {
-        "question": "¿Qué control de calidad pasan nuestros vehículos?",
-        "answer": "En INFINIT Cars, cada vehículo es sometido a un exhaustivo control de calidad para garantizar su fiabilidad y seguridad. Este proceso incluye: Inspección Mecánica Completa, Revisión Estética y Funcional, Pruebas de Rendimiento en Carretera y Control de Calidad Final."
+        "question": "¿Qué control de calidad pasan vuestros vehículos?",
+        "answer": "Cada vehículo pasa por un riguroso proceso de certificación que incluye: inspección mecánica de más de 150 puntos, revisión electrónica completa con diagnóstico computerizado, verificación del historial de mantenimiento y accidentes, prueba de rendimiento en carretera, y una revisión estética profesional. Solo los vehículos que superan todos los controles se ponen a la venta."
       },
       "trade_in": {
-        "question": "¿Aceptáis vehículos como parte de pago?",
-        "answer": "Sí, en INFINIT Cars aceptamos vehículos como parte de pago. Para decidir si aceptamos un vehículo o no, realizamos una evaluación detallada del coche que se ofrece en parte de pago, considerando factores como el año, el kilometraje, el estado general y el historial de mantenimiento, asegurando así un acuerdo justo y transparente para ambas partes. Te invitamos a visitar nuestro concesionario con tu vehículo actual para una valoración sin compromiso y discutir las opciones disponibles para ti."
+        "question": "¿Aceptáis mi vehículo actual como parte de pago?",
+        "answer": "Sí, en Luxury Car aceptamos vehículos como parte de pago. Realizamos una tasación profesional gratuita y sin compromiso, considerando marca, modelo, año, kilometraje, estado general e historial de mantenimiento. Te ofrecemos un precio justo y transparente que se descuenta directamente del precio de tu nuevo vehículo."
+      },
+      "schedule": {
+        "question": "¿Cuáles son vuestros horarios de atención?",
+        "answer": "Estamos disponibles de lunes a viernes de 10:00 a 14:00 y de 16:00 a 19:00. Los sábados atendemos con cita previa para ofrecerte un servicio más personalizado. También puedes contactarnos por WhatsApp o email fuera de horario comercial."
+      },
+      "test_drive": {
+        "question": "¿Puedo concertar una prueba de conducción?",
+        "answer": "Por supuesto. Puedes programar una prueba de conducción contactándonos por teléfono, WhatsApp o a través de la ficha del vehículo. Organizaremos una cita en el horario que mejor te convenga para que puedas probar el vehículo antes de tomar tu decisión."
       }
     }
   },
@@ -115,8 +128,8 @@
       "vehicle_sales": "Venta de vehículos",
       "vehicle_purchase": "Compra de vehículos",
       "financing": "Financiación",
-      "insurance": "Seguros",
-      "extended_warranty": "Garantía extendida"
+      "delivery": "Entrega en toda España",
+      "vip_service": "Servicio VIP"
     },
     "hours_title": "Horarios",
     "hours": {
@@ -130,11 +143,11 @@
       "terms_conditions": "Términos y Condiciones",
       "cookies": "Cookies"
     },
-    "copyright": "© 2026 INFINIT Cars. Powered by"
+    "copyright": "© 2026 Luxury Car. Desarrollado por"
   },
   "contact_page": {
     "title": "Contacta con nosotros",
-    "subtitle": "Para cualquier información sobre nosotros o culquier vehículo no dude en contactarnos",
+    "subtitle": "Para cualquier información sobre nosotros o cualquier vehículo no dude en contactarnos",
     "form": {
       "name": "Nombre",
       "name_placeholder": "Nombre",
@@ -230,38 +243,47 @@
     "year": "Año"
   },
   "reviews": {
-    "title": "Lo que dicen nuestros clientes de nosotros",
+    "title": "Lo que dicen nuestros clientes",
+    "subtitle": "Valoraciones reales verificadas en Google",
     "google_review": "Reseña de Google",
+    "based_on": "Basado en",
+    "reviews_count": "reseñas",
     "testimonials": [
       {
-        "name": "María S.",
+        "name": "Jordi M.",
         "rating": 5,
-        "review": "Experiencia impecable de principio a fin. El vehículo que adquirimos estaba en perfectas condiciones y el equipo fue muy profesional en todo momento. La transparencia en el proceso y la atención al detalle nos dieron total confianza. Sin duda, una compra muy acertada."
+        "date": "Hace 2 semanas",
+        "review": "Compré un BMW Serie 5 seminuevo en Luxury Car y la experiencia fue excepcional. Desde el primer contacto, el equipo me atendió con total profesionalidad, explicándome cada detalle del vehículo y su historial completo. El coche estaba impecable y el precio muy competitivo respecto a otros concesionarios. Totalmente recomendable."
       },
       {
-        "name": "Carlos M.",
+        "name": "Marta G.",
         "rating": 5,
-        "review": "Compré un SUV premium seminuevo y quedé encantado con el servicio. Todo el proceso fue ágil y claro, con información detallada del vehículo. La financiación se gestionó rápidamente y el precio fue muy competitivo. Totalmente recomendable."
+        "date": "Hace 1 mes",
+        "review": "Buscaba un Mercedes GLC de ocasión y encontré exactamente lo que necesitaba en Luxury Car. El asesoramiento fue excepcional, me ayudaron a elegir el modelo ideal según mis necesidades y la financiación se gestionó en tiempo récord. El estado del vehículo superó con creces mis expectativas."
       },
       {
-        "name": "María Jiménez",
-        "rating": 5,
-        "review": "Llevaba meses buscando el coche perfecto y finalmente lo encontré gracias a INFINIT Cars. Desde el primer contacto, el trato fue excepcional. Me asesoraron sin presiones, respondieron todas mis dudas con paciencia y me ayudaron a encontrar exactamente lo que buscaba dentro de mi presupuesto. El vehículo llegó en condiciones impecables, mejor de lo esperado. La financiación fue rápida y transparente, sin sorpresas. Además, el servicio post-venta es excepcional - me llamaron para asegurarse de que todo estaba perfecto. Sin duda, volveré cuando necesite cambiar de coche y lo recomiendo a todo el mundo. Una experiencia de compra que superó todas mis expectativas."
-      },
-      {
-        "name": "Laura P.",
-        "rating": 5,
-        "review": "Buscábamos un coche de alta gama de ocasión y encontramos exactamente lo que necesitábamos. El asesoramiento fue excelente, nos explicaron todas las opciones y nos ayudaron a elegir el modelo ideal para nosotros. El estado del vehículo superó nuestras expectativas."
-      },
-      {
-        "name": "David R.",
+        "name": "Pedro S.",
         "rating": 4,
-        "review": "Proceso de compra profesional. Me mantuvieron informado en todo momento y el coche llegó en buenas condiciones. Buena experiencia en general."
+        "date": "Hace 3 semanas",
+        "review": "Proceso de compra profesional y transparente. Me mantuvieron informado en todo momento sobre el estado de mi Audi Q5. El coche llegó a casa en perfectas condiciones con el transporte incluido. Buena experiencia, sin duda repetiré."
       },
       {
-        "name": "Ana T.",
+        "name": "Laura R.",
         "rating": 5,
-        "review": "Muy satisfecha con mi compra. El equipo se tomó el tiempo de entender mis necesidades y me presentaron opciones que se ajustaban perfectamente a mi presupuesto. La atención post-venta también ha sido excepcional. Una experiencia 5 estrellas."
+        "date": "Hace 2 meses",
+        "review": "Muy satisfecha con mi compra de un Volvo XC60 en Luxury Car. El equipo se tomó el tiempo de entender mis necesidades y me presentaron opciones que se ajustaban perfectamente a mi presupuesto. La atención fue cercana, profesional y sin presiones. Lo recomiendo sin dudarlo."
+      },
+      {
+        "name": "Marc T.",
+        "rating": 4,
+        "date": "Hace 1 mes",
+        "review": "Gran selección de vehículos premium y un trato muy correcto. Compré un Porsche Cayenne y la gestión fue rápida. El vehículo estaba exactamente como lo describieron en las fotos y especificaciones. Repetiría sin duda."
+      },
+      {
+        "name": "Ana B.",
+        "rating": 5,
+        "date": "Hace 3 meses",
+        "review": "Una experiencia de compra de 10. Adquirí un Range Rover Evoque y todo el proceso fue impecable: asesoramiento personalizado, documentación rápida y entrega puntual. El equipo de Luxury Car transmite confianza y seriedad. Muy recomendable para quien busca un vehículo de calidad."
       }
     ]
   },
@@ -270,7 +292,7 @@
       "title": "Aviso Legal",
       "section_1_1": {
         "title": "1.1 Identificación del Titular",
-        "content": "En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), se informa que el presente sitio web infinit.com es propiedad de:",
+        "content": "En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), se informa que el presente sitio web es propiedad de:",
         "owner": "Titular",
         "tax_id": "CIF/NIF",
         "address": "Domicilio social",
@@ -288,7 +310,7 @@
       },
       "section_1_3": {
         "title": "1.3 Propiedad Intelectual e Industrial",
-        "content": "Todos los contenidos del sitio web (textos, imágenes, logotipos, diseños, etc.) son propiedad de INFINIT Cars o de terceros autorizados. Queda prohibida su reproducción, distribución o modificación sin autorización expresa."
+        "content": "Todos los contenidos del sitio web (textos, imágenes, logotipos, diseños, etc.) son propiedad de Luxury Car o de terceros autorizados. Queda prohibida su reproducción, distribución o modificación sin autorización expresa."
       },
       "section_1_4": {
         "title": "1.4 Responsabilidad",
@@ -443,7 +465,7 @@
   },
   "services_page": {
     "hero": {
-      "title": "Servicios en INFINIT Cars",
+      "title": "Servicios en Luxury Car",
       "subtitle": "Comercializamos e importamos vehículos premium a la carta, de ocasión, seminuevos y de KM 0 en"
     },
     "main_services": {
@@ -470,7 +492,7 @@
       "button": "Tasar mi vehículo"
     },
     "alt_texts": {
-      "hero": "BMW blanco con logo de INFINIT Cars",
+      "hero": "Vehículo premium con logo de Luxury Car",
       "sell": "Porsche deportivo gris en pista - Servicios de tasación de vehículos premium"
     }
   },
@@ -688,9 +710,9 @@
       "address": "Dirección",
       "address_placeholder": "Calle, número, piso, puerta",
       "postal_code": "Código postal",
-      "postal_code_placeholder": "28001",
+      "postal_code_placeholder": "08820",
       "city": "Población",
-      "city_placeholder": "Madrid",
+      "city_placeholder": "El Prat de Llobregat",
       "accept_privacy": "Acepto las comunicaciones comerciales y de ofertas. Acepto la",
       "privacy_policy": "política de privacidad",
       "continue": "Continuar",
@@ -740,7 +762,7 @@
       "success": "¡Reserva confirmada! Nos pondremos en contacto contigo pronto."
     },
     "appointment": {
-      "modal_title": "Reserva tu cita en INFINIT Cars",
+      "modal_title": "Reserva tu cita en Luxury Car",
       "date_label": "Fecha de la cita",
       "time_label": "Hora",
       "time_placeholder": "Selecciona una hora",
@@ -761,9 +783,9 @@
       "surname": "Apellido",
       "surname_placeholder": "Apellido",
       "email": "Email",
-      "email_placeholder": "xxx@xxx.com",
+      "email_placeholder": "email@ejemplo.com",
       "phone": "Teléfono",
-      "phone_placeholder": "666 666 666",
+      "phone_placeholder": "600 000 000",
       "message": "Mensaje",
       "message_placeholder_reserve": "Quiero reservar este",
       "accept_terms": "Acepto las comunicaciones comerciales y de ofertas. Acepto la",

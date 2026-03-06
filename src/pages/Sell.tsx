@@ -10,7 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { CheckCircle2, ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
+import { CheckCircle2, ArrowRight, ArrowLeft, CheckCircle, Shield, Clock, Sparkles, Car } from "lucide-react";
+import sellBg from "@/assets/img1.jpg";
 import {
   Dialog,
   DialogContent,
@@ -250,59 +251,74 @@ Kilometraje: ${formData.kilometraje} km`;
 
       <main className="flex-1">
         {/* Hero Section with Form */}
-        <section className="py-16 px-4 bg-muted">
-          <div className="container mx-auto max-w-7xl">
+        <section className="relative pt-36 pb-20 px-4 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src={sellBg}
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
+          </div>
+
+          <div className="container mx-auto max-w-7xl relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
               {/* Left side - Title, subtitle, and benefits */}
               <div className="lg:col-span-2 space-y-8">
                 <div className="space-y-4">
-                  <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-amber-400 text-sm font-medium">
+                    <Car className="w-4 h-4" />
+                    {t("sell_page.hero.title")}
+                  </div>
+                  <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                     {t("sell_page.hero.title")}
                   </h1>
-                  <p className="text-xl text-muted-foreground leading-relaxed">
+                  <p className="text-xl text-gray-300 leading-relaxed">
                     {t("sell_page.hero.subtitle")}
                   </p>
                 </div>
 
                 {/* Benefits checklist */}
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center mt-1">
-                      <CheckCircle2 className="w-4 h-4 text-primary-foreground" />
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                      <Sparkles className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg text-foreground mb-1">{t("sell_page.benefits.best_price.title")}</h3>
-                      <p className="text-muted-foreground">{t("sell_page.benefits.best_price.description")}</p>
+                      <h3 className="font-bold text-lg text-white mb-0.5">{t("sell_page.benefits.best_price.title")}</h3>
+                      <p className="text-gray-400 text-sm">{t("sell_page.benefits.best_price.description")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center mt-1">
-                      <CheckCircle2 className="w-4 h-4 text-primary-foreground" />
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg text-foreground mb-1">{t("sell_page.benefits.fast_process.title")}</h3>
-                      <p className="text-muted-foreground">{t("sell_page.benefits.fast_process.description")}</p>
+                      <h3 className="font-bold text-lg text-white mb-0.5">{t("sell_page.benefits.fast_process.title")}</h3>
+                      <p className="text-gray-400 text-sm">{t("sell_page.benefits.fast_process.description")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center mt-1">
-                      <CheckCircle2 className="w-4 h-4 text-primary-foreground" />
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg text-foreground mb-1">{t("sell_page.benefits.no_commitment.title")}</h3>
-                      <p className="text-muted-foreground">{t("sell_page.benefits.no_commitment.description")}</p>
+                      <h3 className="font-bold text-lg text-white mb-0.5">{t("sell_page.benefits.no_commitment.title")}</h3>
+                      <p className="text-gray-400 text-sm">{t("sell_page.benefits.no_commitment.description")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center mt-1">
-                      <CheckCircle2 className="w-4 h-4 text-primary-foreground" />
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg text-foreground mb-1">{t("sell_page.benefits.any_vehicle.title")}</h3>
-                      <p className="text-muted-foreground">{t("sell_page.benefits.any_vehicle.description")}</p>
+                      <h3 className="font-bold text-lg text-white mb-0.5">{t("sell_page.benefits.any_vehicle.title")}</h3>
+                      <p className="text-gray-400 text-sm">{t("sell_page.benefits.any_vehicle.description")}</p>
                     </div>
                   </div>
                 </div>
@@ -310,7 +326,7 @@ Kilometraje: ${formData.kilometraje} km`;
 
               {/* Right side - Form */}
               <div className="lg:col-span-3">
-                <Card className="bg-white shadow-xl border-0">
+                <Card className="bg-white/95 backdrop-blur-md shadow-2xl border border-white/20 rounded-2xl">
                   <CardHeader className="space-y-4">
                     {currentStep === 1 && (
                       <div className="space-y-2">
@@ -820,9 +836,8 @@ Kilometraje: ${formData.kilometraje} km`;
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">{t('legal.privacy_policy.section_2_1.title')}</h3>
               <div className="bg-muted/50 p-4 rounded-lg">
-                <p><strong>{t('legal.privacy_policy.section_2_1.company_name')}:</strong> INFINIT Cars</p>
+                <p><strong>{t('legal.privacy_policy.section_2_1.company_name')}:</strong> Luxury Car</p>
                 <p><strong>{t('legal.privacy_policy.section_2_1.address')}:</strong> {address.full}</p>
-                <p><strong>{t('legal.privacy_policy.section_2_1.email')}:</strong> contact@infinit.com</p>
                 <p><strong>{t('legal.privacy_policy.section_2_1.phone')}:</strong> {getPhoneNumber()}</p>
               </div>
 
@@ -843,7 +858,7 @@ Kilometraje: ${formData.kilometraje} km`;
               </ul>
 
               <h3 className="text-lg font-semibold">{t('legal.privacy_policy.section_2_4.title')}</h3>
-              <p>{t('legal.privacy_policy.section_2_4.content')} <strong>contact@infinit.com</strong></p>
+              <p>{t('legal.privacy_policy.section_2_4.content')}</p>
             </div>
           </div>
         </DialogContent>

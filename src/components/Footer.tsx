@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -7,12 +7,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
-import infinitCarsLogo from "@/assets/logo-INFINIT-black-background.png";
-import LanguageSelector from "./LanguageSelector";
+import luxuryCarLogo from "@/assets/logoo.webp";
 
 const Footer = () => {
   const [openModal, setOpenModal] = useState<string | null>(null);
-  const { getPhoneNumber, getAddress, getCityName, t } = useLanguage();
+  const { getPhoneNumber, getWhatsAppNumber, getAddress, getCityName, language, t } = useLanguage();
   const address = getAddress();
   const cityName = getCityName();
 
@@ -23,9 +22,8 @@ const Footer = () => {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">{t('legal.privacy_policy.section_2_1.title')}</h3>
           <div className="bg-muted/50 p-4 rounded-lg">
-            <p><strong>{t('legal.privacy_policy.section_2_1.company_name')}:</strong> INFINIT Cars</p>
+            <p><strong>{t('legal.privacy_policy.section_2_1.company_name')}:</strong> Luxury Car</p>
             <p><strong>{t('legal.privacy_policy.section_2_1.address')}:</strong> {address.full}</p>
-            <p><strong>{t('legal.privacy_policy.section_2_1.email')}:</strong> contact@infinit.com</p>
             <p><strong>{t('legal.privacy_policy.section_2_1.phone')}:</strong> {getPhoneNumber()}</p>
           </div>
 
@@ -46,7 +44,7 @@ const Footer = () => {
           </ul>
 
           <h3 className="text-lg font-semibold">{t('legal.privacy_policy.section_2_4.title')}</h3>
-          <p>{t('legal.privacy_policy.section_2_4.content')} <strong>contact@infinit.com</strong></p>
+          <p>{t('legal.privacy_policy.section_2_4.content')}</p>
         </div>
       )
     },
@@ -57,10 +55,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold">{t('legal.legal_notice.section_1_1.title')}</h3>
           <p>{t('legal.legal_notice.section_1_1.content')}</p>
           <div className="bg-muted/50 p-4 rounded-lg">
-            <p><strong>{t('legal.legal_notice.section_1_1.owner')}:</strong> INFINIT Cars</p>
+            <p><strong>{t('legal.legal_notice.section_1_1.owner')}:</strong> Luxury Car</p>
             <p><strong>{t('legal.legal_notice.section_1_1.address')}:</strong> {address.full}</p>
             <p><strong>{t('legal.legal_notice.section_1_1.phone')}:</strong> {getPhoneNumber()}</p>
-            <p><strong>{t('legal.legal_notice.section_1_1.email')}:</strong> contact@infinit.com</p>
           </div>
 
           <h3 className="text-lg font-semibold">{t('legal.legal_notice.section_1_2.title')}</h3>
@@ -140,15 +137,14 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img
-                src={infinitCarsLogo}
-                alt="INFINIT Cars Logo"
+                src={luxuryCarLogo}
+                alt="Luxury Car Logo"
                 className="h-10 object-contain"
               />
             </div>
             <p className="text-white/70 mb-4">
               {t('footer.company_description')} {cityName}.
             </p>
-            <LanguageSelector />
           </div>
 
           {/* Contact */}
@@ -158,10 +154,6 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <Phone size={16} className="text-primary" />
                 <span className="text-white/70">{getPhoneNumber()}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail size={16} className="text-primary" />
-                <span className="text-white/70">contact@infinit.com</span>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin size={16} className="text-primary flex-shrink-0 mt-0.5" />
@@ -177,8 +169,8 @@ const Footer = () => {
               <li>{t('footer.services_list.vehicle_sales')}</li>
               <li>{t('footer.services_list.vehicle_purchase')}</li>
               <li>{t('footer.services_list.financing')}</li>
-              <li>{t('footer.services_list.insurance')}</li>
-              <li>{t('footer.services_list.extended_warranty')}</li>
+              <li>{t('footer.services_list.delivery')}</li>
+              <li>{t('footer.services_list.vip_service')}</li>
             </ul>
           </div>
 
@@ -202,29 +194,11 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Social Media */}
+            {/* Social Media - WhatsApp only */}
             <div className="mt-8">
               <div className="flex items-center space-x-4">
                 <a
-                  href="https://www.facebook.com/infinitcars"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary/80 hover:text-primary transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={24} />
-                </a>
-                <a
-                  href="https://www.instagram.com/infinit_cars"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary/80 hover:text-primary transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={24} />
-                </a>
-                <a
-                  href="https://wa.me/1234567890?text=Hello%20INFINIT%20Cars"
+                  href={`https://wa.me/${getWhatsAppNumber()}?text=${encodeURIComponent(language === 'fr' ? 'Bonjour Luxury Car' : language === 'en' ? 'Hello Luxury Car' : 'Hola Luxury Car')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary/80 hover:text-primary transition-colors"

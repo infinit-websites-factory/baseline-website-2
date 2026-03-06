@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -113,13 +113,6 @@ const Contact = () => {
       href: `tel:${phoneNumber}`
     },
     {
-      icon: Mail,
-      title: t('contact_page.info.write_us.title'),
-      description: t('contact_page.info.write_us.description'),
-      contact: "contact@infinit.com",
-      href: "mailto:contact@infinit.com"
-    },
-    {
       icon: MapPin,
       title: t('contact_page.info.visit_us.title'),
       description: `${t('contact_page.info.visit_us.description')} ${address.full}`,
@@ -134,8 +127,8 @@ const Contact = () => {
       <Header />
 
       {/* Hero Section with Form */}
-      <div 
-        className="bg-gray-700 pt-24"
+      <div
+        className="relative bg-gray-700 pt-36"
         style={{
           backgroundImage: `url(${contactBackground})`,
           backgroundRepeat: 'no-repeat',
@@ -303,38 +296,49 @@ const Contact = () => {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section
+        className="relative py-20 px-4"
+        style={{
+          backgroundImage: `url(${contactBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
-                <Card key={index} className="text-center bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="relative bg-gray-100 p-6">
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
-                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center">
-                        <IconComponent className="w-8 h-8 text-black" />
+                <a
+                  key={index}
+                  href={info.href}
+                  target={info.icon === MapPin ? "_blank" : undefined}
+                  rel={info.icon === MapPin ? "noopener noreferrer" : undefined}
+                  className="group block"
+                >
+                  <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 h-full">
+                    <div className="flex items-start gap-6">
+                      <div className="w-14 h-14 shrink-0 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
+                        <IconComponent className="w-7 h-7 text-black" />
                       </div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        {info.title}
-                      </h3>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-white mb-1">
+                          {info.title}
+                        </h3>
+                        <p className="text-white/60 text-sm leading-relaxed">
+                          {info.description}
+                        </p>
+                        <div className="mt-4 pt-4 border-t border-white/10">
+                          <span className="text-white font-semibold text-lg group-hover:text-primary transition-colors">
+                            {info.contact}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                        {info.description}
-                      </p>
-                      <a
-                        href={info.href}
-                        className="text-foreground hover:text-gray-600 font-semibold transition-colors text-lg"
-                        target={info.icon === MapPin ? "_blank" : undefined}
-                        rel={info.icon === MapPin ? "noopener noreferrer" : undefined}
-                      >
-                        {info.contact}
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </a>
               );
             })}
           </div>
@@ -396,7 +400,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title={`Ubicación de INFINIT Cars en ${address.city}`}
+                  title={`${t('contact_page.location.title')} - Luxury Car, ${address.city}`}
                 ></iframe>
               </div>
             </div>
@@ -418,9 +422,8 @@ const Contact = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">{t('legal.privacy_policy.section_2_1.title')}</h3>
               <div className="bg-muted/50 p-4 rounded-lg">
-                <p><strong>{t('legal.privacy_policy.section_2_1.company_name')}:</strong> INFINIT Cars</p>
+                <p><strong>{t('legal.privacy_policy.section_2_1.company_name')}:</strong> Luxury Car</p>
                 <p><strong>{t('legal.privacy_policy.section_2_1.address')}:</strong> {address.full}</p>
-                <p><strong>{t('legal.privacy_policy.section_2_1.email')}:</strong> contact@infinit.com</p>
                 <p><strong>{t('legal.privacy_policy.section_2_1.phone')}:</strong> {getPhoneNumber()}</p>
               </div>
 
@@ -441,7 +444,7 @@ const Contact = () => {
               </ul>
 
               <h3 className="text-lg font-semibold">{t('legal.privacy_policy.section_2_4.title')}</h3>
-              <p>{t('legal.privacy_policy.section_2_4.content')} <strong>contact@infinit.com</strong></p>
+              <p>{t('legal.privacy_policy.section_2_4.content')}</p>
             </div>
           </div>
         </DialogContent>

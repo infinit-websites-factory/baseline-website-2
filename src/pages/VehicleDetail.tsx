@@ -98,7 +98,7 @@ const VehicleDetail = () => {
   if (isLoading || !vehicle) {
     return <div className="min-h-screen bg-background">
         <Header />
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 pt-36 pb-8">
           <div className="animate-pulse">
             <div className="h-8 bg-muted rounded w-1/3 mb-4"></div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -315,7 +315,7 @@ const VehicleDetail = () => {
       <SEO page="vehicle_detail" vehicleName={vehicle ? `${vehicle.brand} ${vehicle.model}` : undefined} />
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 pt-36 pb-8">
         {/* Breadcrumb */}
         <nav className="mb-6">
           <Button variant="ghost" onClick={() => navigate('/stock')} className="p-0 h-auto text-muted-foreground hover:text-muted-foreground hover:bg-transparent">
@@ -858,9 +858,8 @@ const VehicleDetail = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">{t('legal.privacy_policy.section_2_1.title')}</h3>
               <div className="bg-muted/50 p-4 rounded-lg">
-                <p><strong>{t('legal.privacy_policy.section_2_1.company_name')}:</strong> INFINIT Cars</p>
+                <p><strong>{t('legal.privacy_policy.section_2_1.company_name')}:</strong> Luxury Car</p>
                 <p><strong>{t('legal.privacy_policy.section_2_1.address')}:</strong> {address.full}</p>
-                <p><strong>{t('legal.privacy_policy.section_2_1.email')}:</strong> contact@infinit.com</p>
                 <p><strong>{t('legal.privacy_policy.section_2_1.phone')}:</strong> {getPhoneNumber()}</p>
               </div>
 
@@ -881,7 +880,7 @@ const VehicleDetail = () => {
               </ul>
 
               <h3 className="text-lg font-semibold">{t('legal.privacy_policy.section_2_4.title')}</h3>
-              <p>{t('legal.privacy_policy.section_2_4.content')} <strong>contact@infinit.com</strong></p>
+              <p>{t('legal.privacy_policy.section_2_4.content')}</p>
             </div>
           </div>
         </DialogContent>

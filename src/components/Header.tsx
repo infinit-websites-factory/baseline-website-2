@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X, MapPin, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import infinitCarsLogo from "@/assets/logo-INFINIT-black-background.png";
-import { useState } from "react";
+import luxuryCarLogo from "@/assets/logoo.webp";
+import { useState, useEffect } from "react";
 import {
   Sheet,
   SheetContent,
@@ -14,7 +14,16 @@ import {
 const Header = () => {
   const { getPhoneNumber, getAddress, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const address = getAddress();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navigationLinks = [
     { href: "/", label: t('header.home') },
@@ -26,41 +35,45 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-nav-background text-nav-foreground border-b border-border/10">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled
+        ? 'bg-black/80 backdrop-blur-xl shadow-lg shadow-black/20'
+        : 'bg-black/40 backdrop-blur-md'
+    }`}>
       {/* Line 1: Logo, Address, Hours, Call Button */}
-      <div className="bg-[#111] text-white border-b border-border/10">
-        <div className="container mx-auto px-4 py-4">
+      <div className="border-b border-white/10">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="/" className="hover:opacity-80 transition-opacity">
               <img
-                src={infinitCarsLogo}
-                alt="INFINIT Cars Logo"
-                className="h-12 object-contain"
+                src={luxuryCarLogo}
+                alt="Luxury Car Logo"
+                className="h-10 object-contain"
               />
             </a>
 
             {/* Address & Hours - Desktop Only */}
-            <div className="hidden lg:flex items-center gap-16 text-sm">
+            <div className="hidden lg:flex items-center gap-12 text-sm">
               <div className="flex items-start gap-2">
-                <MapPin size={16} className="text-white mt-0.5 flex-shrink-0" />
+                <MapPin size={15} className="text-white/80 mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="font-semibold text-white">{t('header.address')}</span>
-                  <span className="text-white/70">{address.street}</span>
+                  <span className="font-semibold text-white text-xs tracking-wide uppercase">{t('header.address')}</span>
+                  <span className="text-white/60 text-xs">{address.full}</span>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <Clock size={16} className="text-white mt-0.5 flex-shrink-0" />
+                <Clock size={15} className="text-white/80 mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="font-semibold text-white">{t('header.hours')}</span>
-                  <span className="text-white/70">{t('footer.hours.weekday')}</span>
+                  <span className="font-semibold text-white text-xs tracking-wide uppercase">{t('header.hours')}</span>
+                  <span className="text-white/60 text-xs">{t('footer.hours.weekday')}</span>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <Phone size={16} className="text-white mt-0.5 flex-shrink-0" />
+                <Phone size={15} className="text-white/80 mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="font-semibold text-white">{t('header.phone')}</span>
-                  <span className="text-white/70">{getPhoneNumber()}</span>
+                  <span className="font-semibold text-white text-xs tracking-wide uppercase">{t('header.phone')}</span>
+                  <span className="text-white/60 text-xs">{getPhoneNumber()}</span>
                 </div>
               </div>
             </div>
@@ -89,12 +102,12 @@ const Header = () => {
       {/* Line 2: Navigation Menu */}
       <div className="hidden md:block">
         <div className="container mx-auto px-4">
-          <nav className="flex items-center justify-center space-x-8 py-4">
+          <nav className="flex items-center justify-center space-x-8 py-3">
             {navigationLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-nav-foreground hover:text-gray-600 transition-colors font-medium"
+                className="text-white/90 hover:text-white transition-colors font-medium text-sm tracking-wide"
               >
                 {link.label}
               </a>
@@ -107,7 +120,7 @@ const Header = () => {
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetContent side="right" className="bg-white">
           <SheetHeader>
-            <SheetTitle className="text-foreground text-left">Menu</SheetTitle>
+            <SheetTitle className="text-foreground text-left">{t('common.menu')}</SheetTitle>
           </SheetHeader>
           <nav className="flex flex-col space-y-6 mt-8">
             {navigationLinks.map((link) => (

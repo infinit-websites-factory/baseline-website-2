@@ -67,7 +67,7 @@ export interface Vehicle {
 }
 
 // Default fallback profile ID
-const DEFAULT_PROFILE_ID = 'aba6af2e-18f8-4757-a892-c589d9b965ca';
+const DEFAULT_PROFILE_ID = 'a5dd8bbf-2f7b-4b79-8246-f6fa76ecd0f9';
 
 // UUID v4 regex pattern
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -77,22 +77,18 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9
  * Returns the profile ID if valid UUID, otherwise returns default
  */
 const getProfileIdFromSubdomain = (): string => {
-  // Check if we're in a browser environment
   if (typeof window === 'undefined') {
     return DEFAULT_PROFILE_ID;
   }
 
   const hostname = window.location.hostname;
 
-  // Check if the domain ends with infinitsite.com
   if (!hostname.endsWith('.infinitsite.com')) {
     return DEFAULT_PROFILE_ID;
   }
 
-  // Extract subdomain (everything before .infinitsite.com)
   const subdomain = hostname.replace('.infinitsite.com', '');
 
-  // Validate if subdomain is a valid UUID
   if (UUID_REGEX.test(subdomain)) {
     console.log('Using profile ID from subdomain:', subdomain);
     return subdomain;
@@ -106,7 +102,7 @@ const getProfileIdFromSubdomain = (): string => {
 export const PROFILE_ID = getProfileIdFromSubdomain();
 
 // API endpoints using the dynamic profile ID
-const API_BASE_URL = 'https://multipost-public.alx.test-cluster.alx.tech';
+const API_BASE_URL = 'https://multipost-public.app.infinit.cc';
 const API_URL = `${API_BASE_URL}/api/public/inventory/profiles/${PROFILE_ID}`;
 export const CONTACT_FORM_API_URL = `${API_BASE_URL}/api/interactions/contact-form`;
 
@@ -141,7 +137,7 @@ export const transformApiCarToVehicle = (apiCar: CarApiResponse): Vehicle => {
     brand: apiCar.make || 'Unknown',
     model: apiCar.model || 'Unknown',
     year: registrationYear,
-    price: apiCar.price_cents ? apiCar.price_cents / 100 : 0, // Convert from cents to euros
+    price: apiCar.price_cents ? apiCar.price_cents / 100 : 0,
     mileage: apiCar.odometer?.value || 0,
     mileageUnit: apiCar.odometer?.unit || 'km',
     fuel: apiCar.fuel || 'Unknown',

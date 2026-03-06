@@ -10,23 +10,24 @@ Use this prompt template every time you need to convert this car dealership webs
 I need you to convert this car dealership website to a new dealership. Make all necessary changes throughout the codebase based on the following information:
 
 **DEALERSHIP DETAILS:**
-- Existing website: https://www.sherpacars.com/
-- Dealership Name: Sherpa Cars
-- Phone Number: +34686959558
-- Email Address: info@sherpacars.com
-- Street Address: Plaza del comercio 6 Local 4
-- City/Postal: 28703, San Sebastián de los reyes, Madrid, España
+- Existing website: 
+- Dealership Name: LUXURY CAR
+- Phone Number: +34747775728
+- Email Address: 
+- Street Address: 83HM+QJ El Prat de Llobregat, Spain
+- City/Postal: 83HM+QJ El Prat de Llobregat, Spain
 - Facebook URL: None
-- Instagram URL: https://www.instagram.com/https://www.instagram.com/sherpacarsmadrid/
-- Google Maps Location URL: https://www.google.es/maps/place/Sherpa+Cars-Coches+de+segunda+mano+en+Madrid/@40.5432598,-3.6130768,17z/data=!3m1!4b1!4m6!3m5!1s0xd422d0aae13ce4b:0xeb0c0a1870db7983!8m2!3d40.5432558!4d-3.6105019!16s%2Fg%2F11vwy0my2t?entry=tts&g_ep=EgoyMDI1MTAyNy4wIPu8ASoASAFQAw%3D%3D&skid=54bf610b-042c-4933-a6b1-db155b5e0a36
-- Google Maps Embed URL: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.924561025314!2d-3.6105019000000005!3d40.5432558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422d0aae13ce4b%3A0xeb0c0a1870db7983!2sSherpa%20Cars-Coches%20de%20segunda%20mano%20en%20Madrid!5e0!3m2!1sen!2sfr!4v1761838207095!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-- Google Rating: 5.0
+- Instagram URL: 
+- Google Maps Location URL: https://maps.app.goo.gl/KPTob6R2WPd9uDtd7
+data=!3m1!4b1!4m6!3m5!1s0xd422d0aae13ce4b:0xeb0c0a1870db7983!8m2!3d40.5432558!4d-3.6105019!16s%2Fg%2F11vwy0my2t?entry=tts&g_ep=EgoyMDI1MTAyNy4wIPu8ASoASAFQAw%3D%3D&skid=54bf610b-042c-4933-a6b1-db155b5e0a36
+- Google Maps Embed URL: <iframe src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.053040855266!2d2.0815250758755677!3d41.32945997130732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49f8445d66b77%3A0xf63709398a17e367!2sLuxury%20Car!5e0!3m2!1sen!2sin!4v1772612177733!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+- Google Rating: 4.4
 
 **BRANDING:**
 - Primary Color Hex: #1e429f
 
 **CONFIGURATION:**
-- Profile ID: 40a87e07-701f-4122-8edf-be4bd25b40d5
+- Profile ID: a5dd8bbf-2f7b-4b79-8246-f6fa76ecd0f9
 - API_BASE_URL = https://multipost-public.app.infinit.cc
 
 **REQUIREMENTS:**

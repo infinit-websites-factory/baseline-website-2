@@ -42,7 +42,8 @@
     "send": "Send",
     "sending": "Sending...",
     "close": "Close",
-    "view_details": "View details"
+    "view_details": "View details",
+    "menu": "Menu"
   },
   "header": {
     "home": "Home",
@@ -64,12 +65,12 @@
     "placeholder": "Search by brand, model..."
   },
   "services": {
-    "title": "Our services at INFINIT Cars",
+    "title": "Our services at Luxury Car",
     "subtitle": "Commercialisation and import of custom premium vehicles, used and nearly new.",
     "vip": {
       "title": "VIP Service",
       "description": "We take care of everything: pickup, delivery, cleaning and any other management you need. You'll only have to worry about getting behind the wheel of your new vehicle.",
-      "additional_info": "Delivery throughout Great Britain."
+      "additional_info": "Delivery throughout Spain."
     },
     "warranty": {
       "title": "Plus Warranty (Extendable to 3 years)",
@@ -82,28 +83,40 @@
     }
   },
   "faq": {
-    "title": "Frequently asked questions",
-    "subtitle": "We answer the most common questions about our services",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know before purchasing your next premium vehicle",
     "questions": {
       "reserve": {
-        "question": "I like a car, how can I reserve it?",
-        "answer": "Select the vehicle you like, click on the 'Reserve Vehicle' button and follow the steps. Easier than buying a pair of shoes!"
+        "question": "How do I reserve a premium vehicle?",
+        "answer": "Simply select the vehicle from our catalogue and click 'Reserve Vehicle'. A dedicated advisor will contact you to manage all the details, from paperwork to payment, ensuring a smooth and exclusive purchasing experience."
       },
       "warranty": {
-        "question": "What do our vehicle warranties cover?",
-        "answer": "The warranty we offer is for 1 year in compliance with current legislation. In addition, we offer the possibility of contracting a coverage extension of up to 3 years."
+        "question": "What warranty coverage is included?",
+        "answer": "All our vehicles come with a minimum 12-month warranty covering engine, gearbox, electrical system and key components. You can also extend coverage up to 3 years for complete peace of mind. Each vehicle is delivered with a detailed warranty certificate."
       },
-      "schedule": {
-        "question": "What is our schedule?",
-        "answer": "We are open all year round from Monday to Friday from 10:00 to 14:00 and from 16:00 to 19:00. On Saturdays we serve by appointment and on Sundays we are closed."
+      "delivery": {
+        "question": "Do you deliver throughout Spain?",
+        "answer": "Yes, we offer a premium door-to-door delivery service throughout Spain. Your vehicle is transported in an enclosed carrier to ensure it arrives in showroom condition. International shipping across Europe is also available upon request."
+      },
+      "financing": {
+        "question": "What financing options do you offer?",
+        "answer": "We partner with leading financial institutions to offer competitive terms tailored to your profile. Choose from 12 to 96 months, with or without a deposit. Our finance team provides free, no-obligation advice to help you find the perfect payment plan."
       },
       "quality": {
-        "question": "What quality control do our vehicles undergo?",
-        "answer": "At INFINIT Cars, each vehicle undergoes a thorough quality control to guarantee its reliability and safety. This process includes: Complete Mechanical Inspection, Aesthetic and Functional Review, Road Performance Tests and Final Quality Control."
+        "question": "What quality checks do your vehicles go through?",
+        "answer": "Every vehicle goes through a rigorous certification process including: a 150+ point mechanical inspection, full electronic review with computerised diagnostics, service history and accident record verification, on-road performance testing, and a professional aesthetic review. Only vehicles that pass all checks are listed for sale."
       },
       "trade_in": {
-        "question": "Do you accept vehicles as part payment?",
-        "answer": "Yes, at INFINIT Cars we accept vehicles as part payment. To decide whether to accept a vehicle or not, we carry out a detailed evaluation of the car offered in part payment, considering factors such as year, mileage, general condition and maintenance history, thus ensuring a fair and transparent agreement for both parties. We invite you to visit our dealership with your current vehicle for a no-obligation valuation and discuss the options available to you."
+        "question": "Can I trade in my current vehicle?",
+        "answer": "Yes, we accept vehicles as part exchange. We provide a free, no-obligation professional valuation considering brand, model, year, mileage and overall condition. The trade-in value is deducted directly from the price of your new vehicle, making the upgrade seamless."
+      },
+      "schedule": {
+        "question": "What are your opening hours?",
+        "answer": "We are available Monday to Friday from 10:00 to 14:00 and 16:00 to 19:00. Saturdays are by appointment only for a more personalised experience. You can also reach us via WhatsApp or email outside business hours."
+      },
+      "test_drive": {
+        "question": "Can I arrange a test drive?",
+        "answer": "Of course. You can schedule a test drive by contacting us via phone, WhatsApp or through the vehicle detail page. We will arrange a convenient time so you can experience the vehicle first-hand before making your decision."
       }
     }
   },
@@ -115,8 +128,8 @@
       "vehicle_sales": "Vehicle sales",
       "vehicle_purchase": "Vehicle purchase",
       "financing": "Financing",
-      "insurance": "Insurance",
-      "extended_warranty": "Extended warranty"
+      "delivery": "Delivery throughout Spain",
+      "vip_service": "VIP Service"
     },
     "hours_title": "Hours",
     "hours": {
@@ -130,7 +143,7 @@
       "terms_conditions": "Terms and Conditions",
       "cookies": "Cookies"
     },
-    "copyright": "© 2026 INFINIT Cars. Powered by"
+    "copyright": "© 2026 Luxury Car. Powered by"
   },
   "contact_page": {
     "title": "Contact us",
@@ -230,38 +243,47 @@
     "year": "Year"
   },
   "reviews": {
-    "title": "What our customers say about us",
+    "title": "What our customers say",
+    "subtitle": "Real verified reviews on Google",
     "google_review": "Google Review",
+    "based_on": "Based on",
+    "reviews_count": "reviews",
     "testimonials": [
       {
-        "name": "María S.",
+        "name": "Jordi M.",
         "rating": 5,
-        "review": "Impeccable experience from start to finish. The vehicle we purchased was in perfect condition and the team was very professional throughout. The transparency in the process and attention to detail gave us complete confidence. Without a doubt, a very successful purchase."
+        "date": "2 weeks ago",
+        "review": "I bought a BMW 5 Series from Luxury Car and the experience was exceptional. From the first contact, the team attended to me with total professionalism, explaining every detail of the vehicle and its complete history. The car was immaculate and the price very competitive compared to other dealerships. Absolutely recommended."
       },
       {
-        "name": "Carlos M.",
+        "name": "Marta G.",
         "rating": 5,
-        "review": "I bought a nearly new premium SUV and was delighted with the service. The entire process was smooth and clear, with detailed vehicle information. Financing was handled quickly and the price was very competitive. Totally recommended."
+        "date": "1 month ago",
+        "review": "I was looking for a pre-owned Mercedes GLC and found exactly what I needed at Luxury Car. The advice was outstanding — they helped me choose the ideal model for my needs and the financing was arranged in record time. The condition of the vehicle far exceeded my expectations."
       },
       {
-        "name": "María Jiménez",
-        "rating": 5,
-        "review": "I had been looking for the perfect car for months and finally found it thanks to INFINIT Cars. From the first contact, the treatment was exceptional. They advised me without pressure, patiently answered all my questions and helped me find exactly what I was looking for within my budget. The vehicle arrived in impeccable condition, better than expected. Financing was quick and transparent, with no surprises. Plus, the after-sales service is exceptional - they called to make sure everything was perfect. I will definitely return when I need to change cars and I recommend it to everyone. A purchasing experience that exceeded all my expectations."
-      },
-      {
-        "name": "Laura P.",
-        "rating": 5,
-        "review": "We were looking for a high-end used car and found exactly what we needed. The advice was excellent, they explained all the options and helped us choose the ideal model for us. The condition of the vehicle exceeded our expectations."
-      },
-      {
-        "name": "David R.",
+        "name": "Pedro S.",
         "rating": 4,
-        "review": "Professional purchasing process. They kept me informed at all times and the car arrived in good condition. Good experience overall."
+        "date": "3 weeks ago",
+        "review": "Professional and transparent buying process. They kept me informed at all times about the status of my Audi Q5. The car arrived home in perfect condition with transport included. Great experience, I would definitely use them again."
       },
       {
-        "name": "Ana T.",
+        "name": "Laura R.",
         "rating": 5,
-        "review": "Very satisfied with my purchase. The team took the time to understand my needs and presented me with options that perfectly fit my budget. After-sales service has also been exceptional. A 5-star experience."
+        "date": "2 months ago",
+        "review": "Very happy with my purchase of a Volvo XC60 at Luxury Car. The team took the time to understand my needs and presented options that fit my budget perfectly. The service was personal, professional and pressure-free. I recommend them without hesitation."
+      },
+      {
+        "name": "Marc T.",
+        "rating": 4,
+        "date": "1 month ago",
+        "review": "Great selection of premium vehicles and very fair treatment. I bought a Porsche Cayenne and the process was quick. The vehicle was exactly as described in the photos and specifications. Would definitely buy here again."
+      },
+      {
+        "name": "Ana B.",
+        "rating": 5,
+        "date": "3 months ago",
+        "review": "A 10/10 buying experience. I purchased a Range Rover Evoque and the entire process was flawless — personalised advice, quick paperwork and punctual delivery. The Luxury Car team inspires trust and professionalism. Highly recommended for anyone looking for a quality vehicle."
       }
     ]
   },
@@ -270,7 +292,7 @@
       "title": "Legal Notice",
       "section_1_1": {
         "title": "1.1 Identification of the Owner",
-        "content": "In compliance with Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSICE), we inform you that this website infinit.com is owned by:",
+        "content": "In compliance with Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSICE), we inform you that this website is owned by:",
         "owner": "Owner",
         "tax_id": "TAX ID",
         "address": "Registered office",
@@ -288,7 +310,7 @@
       },
       "section_1_3": {
         "title": "1.3 Intellectual and Industrial Property",
-        "content": "All content on the website (texts, images, logos, designs, etc.) is the property of INFINIT Cars or authorised third parties. Its reproduction, distribution or modification is prohibited without express authorisation."
+        "content": "All content on the website (texts, images, logos, designs, etc.) is the property of Luxury Car or authorised third parties. Its reproduction, distribution or modification is prohibited without express authorisation."
       },
       "section_1_4": {
         "title": "1.4 Liability",
@@ -510,7 +532,7 @@
   },
   "services_page": {
     "hero": {
-      "title": "Services at INFINIT Cars",
+      "title": "Services at Luxury Car",
       "subtitle": "We commercialise and import custom premium vehicles, used and nearly new in"
     },
     "main_services": {
@@ -523,7 +545,7 @@
         "description": "Your used vehicle with a 12-month warranty and up to 3 years. For all types of vehicles such as: sedans, coupes, convertibles, sports cars, SUVs, 4x4s, etc."
       },
       "shipping": {
-        "title": "Delivery throughout Great Britain",
+        "title": "Delivery throughout Spain",
         "description": "If you can't come to pick up the vehicle, don't worry. We take care of everything necessary for you to receive it at your doorstep."
       },
       "financing": {
@@ -537,7 +559,7 @@
       "button": "Get my vehicle valuation"
     },
     "alt_texts": {
-      "hero": "White BMW with INFINIT Cars logo",
+      "hero": "White BMW with Luxury Car logo",
       "sell": "Grey Porsche sports car on track - Premium vehicle valuation services"
     }
   },
@@ -687,9 +709,9 @@
       "address": "Address",
       "address_placeholder": "Street, number, floor, door",
       "postal_code": "Postal code",
-      "postal_code_placeholder": "28001",
+      "postal_code_placeholder": "08820",
       "city": "City",
-      "city_placeholder": "Madrid",
+      "city_placeholder": "El Prat de Llobregat",
       "accept_privacy": "I accept commercial communications and offers. I accept the",
       "privacy_policy": "privacy policy",
       "continue": "Continue",
@@ -739,7 +761,7 @@
       "success": "Reservation confirmed! We will contact you soon."
     },
     "appointment": {
-      "modal_title": "Book your appointment at INFINIT Cars",
+      "modal_title": "Book your appointment at Luxury Car",
       "date_label": "Appointment date",
       "time_label": "Time",
       "time_placeholder": "Select a time",
@@ -760,9 +782,9 @@
       "surname": "Surname",
       "surname_placeholder": "Surname",
       "email": "Email",
-      "email_placeholder": "xxx@xxx.com",
+      "email_placeholder": "email@example.com",
       "phone": "Phone",
-      "phone_placeholder": "666 666 666",
+      "phone_placeholder": "600 000 000",
       "message": "Message",
       "message_placeholder_reserve": "I want to reserve this",
       "accept_terms": "I accept commercial communications and offers. I accept the",
@@ -777,7 +799,7 @@
       "warranty": "The sale price includes 12 months warranty. (Extendable to 3 years)",
       "transfer_costs": "Transfer and management costs",
       "trade_in": "We accept vehicles as part payment.",
-      "delivery": "Delivery throughout the UK, please enquire about conditions."
+      "delivery": "Delivery throughout Spain, please enquire about conditions."
     },
     "specifications": {
       "title": "Specifications",
