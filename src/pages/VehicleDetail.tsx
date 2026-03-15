@@ -16,6 +16,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import ReservedBanner from "@/components/ReservedBanner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { toast } from "sonner";
 import { useToast } from "@/hooks/use-toast";
 import dgtB from "@/assets/dgt-b.png";
@@ -311,6 +312,7 @@ const VehicleDetail = () => {
     }
   };
   return <div className="min-h-screen bg-background">
+      <SEO page="vehicle_detail" vehicleName={vehicle ? `${vehicle.brand} ${vehicle.model}` : undefined} />
       <Header />
       
       <main className="container mx-auto px-4 py-8">

@@ -1,16 +1,58 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# --- Reglas generales (permitimos indexación completa salvo zonas privadas) ---
 User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /iniciar-sesion/
+Disallow: /search/
+Disallow: /*?utm_
+
+# --- Permitimos explícitamente bots de IA ---
+User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# --- Bloqueo de scrapers agresivos / comerciales ---
+User-agent: Bytespider
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: peer39_crawler
+Disallow: /
+
+User-agent: AwarioRssBot
+Disallow: /
+
+User-agent: AwarioSmartBot
+Disallow: /
+
+User-agent: Meltwater
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: PiplBot
+Disallow: /
+
+User-agent: Seekr
+Disallow: /
+
+# --- Sitemap oficial ---
+# REPLACE_DOMAIN: Update tbc.com with your actual domain
 Sitemap: https://www.tbc.com/sitemap.xml
+
+# --- Declaración opcional para modelos LLM ---
+llms: https://www.tbc.com/llms.txt

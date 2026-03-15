@@ -38,7 +38,7 @@ I need you to convert this car dealership website to a new dealership. Make all 
 6. Fetch the latest 5 (4 or 5 stars) google reviews from Google Maps and update the copy of the homepage component accordingly
 6. Change primary brand color throughout the theme
 7. Update profile_id in the API service
-8. Update SEO metadata in index.html
+8. Update SEO metadata: update the `seo` section in translation files (per-page titles and descriptions reference "INFINIT Cars" — replace with the new dealership name), and update the fallback meta tags in index.html (title, description, og:title, og:description)
 9. Update project name in wrangler.toml using the folder name
 10. Update any hardcoded references to the old branding
 11. Update the domain for fetching the stock or submiting a contact form to API_BASE_URL
@@ -134,7 +134,7 @@ This prompt will systematically update:
 - `wrangler.toml` - Project name
 - `api/preview.ts` - Profile ID and domain for social media preview cards
 
-### Translations:
+### Translations (including per-page SEO metadata in the `seo` section):
 - `src/translations/es.json`
 - `src/translations/en.json`
 - `src/translations/fr.json`

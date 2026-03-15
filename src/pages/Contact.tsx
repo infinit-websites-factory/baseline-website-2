@@ -16,6 +16,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
+import SEO from "@/components/SEO";
 import contactBackground from "@/assets/contact.png";
 import { useToast } from "@/hooks/use-toast";
 import { CONTACT_FORM_API_URL, PROFILE_ID } from "@/services/carsApi";
@@ -129,8 +130,9 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO page="contact" />
       <Header />
-      
+
       {/* Hero Section with Form */}
       <div 
         className="bg-gray-700 pt-24"
@@ -142,9 +144,9 @@ const Contact = () => {
         }}
       >
         <div className="px-4 lg:pt-12 pt-6 pb-32 lg:pb-40 mx-auto max-w-screen-sm text-center lg:px-6">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
+          <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
             {t('contact_page.title')}
-          </h2>
+          </h1>
           <p className="mb-8 font-light text-white sm:text-xl pb-5 md:pb-0">
             {t('contact_page.subtitle')}
           </p>

@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/servicios-hero.png";
 import servicios2Image from "@/assets/servicios-2.png";
 
@@ -36,8 +37,9 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO page="services" />
       <Header />
-      
+
       {/* Hero Section */}
       <section className="py-16 px-4 bg-muted">
         <div className="container mx-auto max-w-7xl">

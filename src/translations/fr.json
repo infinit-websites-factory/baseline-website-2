@@ -1,4 +1,38 @@
 {
+  "seo": {
+    "home": {
+      "title": "INFINIT Cars | Véhicules Premium d'Occasion à {city}",
+      "description": "Concessionnaire premium spécialisé dans les véhicules haut de gamme d'occasion et quasi-neufs à {city}. Garantie, financement et service VIP. Meilleure qualité et prix."
+    },
+    "stock": {
+      "title": "Stock de Véhicules Premium | INFINIT Cars {city}",
+      "description": "Explorez notre stock de voitures haut de gamme d'occasion et quasi-neuves à {city}. BMW, Mercedes, Audi, Porsche et plus. Garantie incluse."
+    },
+    "vehicle_detail": {
+      "title": "{vehicle} | INFINIT Cars {city}",
+      "description": "Achetez votre {vehicle} chez INFINIT Cars {city}. Garantie de 12 mois extensible à 3 ans, financement sur mesure et service VIP."
+    },
+    "sell": {
+      "title": "Vendez Votre Voiture au Meilleur Prix | INFINIT Cars {city}",
+      "description": "Estimation gratuite et sans engagement de votre véhicule à {city}. Valorisation sous 24 heures, processus rapide et sécurisé. Nous achetons tous types de voitures."
+    },
+    "financing": {
+      "title": "Financement de Véhicules Premium | INFINIT Cars {city}",
+      "description": "Financement sur mesure pour votre voiture d'occasion à {city}. Mensualités réduites, approbation sous 24h et conditions transparentes."
+    },
+    "services": {
+      "title": "Services Premium pour Votre Véhicule | INFINIT Cars {city}",
+      "description": "Service VIP, garantie jusqu'à 3 ans, livraison dans toute la France, financement et estimation de véhicules. Découvrez tout ce qu'INFINIT Cars offre à {city}."
+    },
+    "contact": {
+      "title": "Contact | INFINIT Cars {city}",
+      "description": "Contactez INFINIT Cars à {city}. Appelez-nous, écrivez-nous ou rendez-nous visite. Nous sommes là pour vous aider avec l'achat, la vente ou le financement de votre véhicule."
+    },
+    "not_found": {
+      "title": "Page Non Trouvée | INFINIT Cars",
+      "description": "La page que vous recherchez n'existe pas. Retournez à la page d'accueil d'INFINIT Cars."
+    }
+  },
   "common": {
     "call_now": "Appeler maintenant",
     "contact": "Contact",

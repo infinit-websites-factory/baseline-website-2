@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
+import SEO from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -244,8 +245,9 @@ Kilometraje: ${formData.kilometraje} km`;
   };
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <SEO page="sell" />
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section with Form */}
         <section className="py-16 px-4 bg-muted">

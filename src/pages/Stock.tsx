@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { AlertCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -70,6 +71,7 @@ const Stock = () => {
   if (isError) {
     return (
       <div className="min-h-screen bg-background">
+        <SEO page="stock" />
         <Header />
         <main>
           <div className="container mx-auto px-4 py-16">

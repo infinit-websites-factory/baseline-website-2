@@ -1,4 +1,38 @@
 {
+  "seo": {
+    "home": {
+      "title": "INFINIT Cars | Premium Used Vehicles in {city}",
+      "description": "Premium dealership specialising in high-end used and nearly new vehicles in {city}. Warranty, financing and VIP service. Best quality and price guaranteed."
+    },
+    "stock": {
+      "title": "Premium Vehicle Stock | INFINIT Cars {city}",
+      "description": "Explore our stock of high-end used and nearly new cars in {city}. BMW, Mercedes, Audi, Porsche and more. Warranty included."
+    },
+    "vehicle_detail": {
+      "title": "{vehicle} | INFINIT Cars {city}",
+      "description": "Buy your {vehicle} at INFINIT Cars {city}. 12-month warranty extendable to 3 years, tailored financing and VIP service."
+    },
+    "sell": {
+      "title": "Sell Your Car at the Best Price | INFINIT Cars {city}",
+      "description": "Free, no-obligation vehicle valuation in {city}. Valuation within 24 hours, fast and secure process. We buy all types of cars."
+    },
+    "financing": {
+      "title": "Premium Vehicle Financing | INFINIT Cars {city}",
+      "description": "Tailored financing for your used car in {city}. Reduced instalments, approval within 24h and transparent terms."
+    },
+    "services": {
+      "title": "Premium Vehicle Services | INFINIT Cars {city}",
+      "description": "VIP service, warranty up to 3 years, UK-wide delivery, financing and vehicle valuation. Discover everything INFINIT Cars offers in {city}."
+    },
+    "contact": {
+      "title": "Contact | INFINIT Cars {city}",
+      "description": "Contact INFINIT Cars in {city}. Call us, write to us or visit us. We're here to help with buying, selling or financing your vehicle."
+    },
+    "not_found": {
+      "title": "Page Not Found | INFINIT Cars",
+      "description": "The page you are looking for does not exist. Return to the INFINIT Cars homepage."
+    }
+  },
   "common": {
     "call_now": "Call now",
     "contact": "Contact",
