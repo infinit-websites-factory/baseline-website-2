@@ -343,7 +343,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
 
       <main className="flex-1">
         {/* Hero Section with Form */}
-        <section className="relative pt-36 pb-20 px-4 overflow-hidden">
+        <section className="relative pt-8 pb-20 px-4 overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0">
             <img
@@ -367,40 +367,40 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                   <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                     {t('financing_page.hero.title')}
                   </h1>
-                  <p className="text-xl text-gray-300 leading-relaxed">
+                  <p className="text-xl text-white/50 leading-relaxed">
                     {t('financing_page.hero.subtitle')}
                   </p>
                 </div>
 
                 {/* Benefits checklist */}
                 <div className="space-y-5">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-[#1F232A] hover:bg-white/10 transition-colors">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                       <Shield className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white mb-0.5">{t('financing_page.benefits.reduced_payments.title')}</h3>
-                      <p className="text-gray-400 text-sm">{t('financing_page.benefits.reduced_payments.description')}</p>
+                      <p className="text-white/35 text-sm">{t('financing_page.benefits.reduced_payments.description')}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-[#1F232A] hover:bg-white/10 transition-colors">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                       <Clock className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white mb-0.5">{t('financing_page.benefits.fast_approval.title')}</h3>
-                      <p className="text-gray-400 text-sm">{t('financing_page.benefits.fast_approval.description')}</p>
+                      <p className="text-white/35 text-sm">{t('financing_page.benefits.fast_approval.description')}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-[#1F232A] hover:bg-white/10 transition-colors">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                       <CheckCircle2 className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white mb-0.5">{t('financing_page.benefits.no_surprises.title')}</h3>
-                      <p className="text-gray-400 text-sm">{t('financing_page.benefits.no_surprises.description')}</p>
+                      <p className="text-white/35 text-sm">{t('financing_page.benefits.no_surprises.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -408,7 +408,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
 
               {/* Right side - Form */}
               <div className="lg:col-span-3">
-                <Card className="bg-white/95 backdrop-blur-md shadow-2xl border border-white/20 rounded-2xl">
+                <Card className="bg-card backdrop-blur-md border border-[#1F232A]">
                   <CardHeader className="space-y-4">
                     {currentStep === 1 && (
                       <div className="space-y-2">
@@ -464,7 +464,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                       <form onSubmit={handleNext} className="space-y-6">
                         <div className="space-y-6 animate-fade-in">
                           <div className="space-y-2">
-                            <Label htmlFor="vehiculoId" className="text-gray-600">{t('financing_page.form.vehicle_select')} *</Label>
+                            <Label htmlFor="vehiculoId" className="text-white/50">{t('financing_page.form.vehicle_select')} *</Label>
                             {loadingVehicles ? (
                               <div className="text-center py-8 text-muted-foreground">
                                 {t('financing_page.form.loading_vehicles')}
@@ -478,7 +478,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 }}
                                 required
                               >
-                                <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.vehiculoId ? "border-red-500" : "border-gray-200"}`}>
+                                <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.vehiculoId ? "border-red-500" : "border-[#1F232A]"}`}>
                                   <SelectValue placeholder={t('financing_page.form.vehicle_select_placeholder')} />
                                 </SelectTrigger>
                                 <SelectContent className="max-h-[300px]">
@@ -494,7 +494,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                           </div>
 
                           {formData.vehiculoId && vehicles.find(v => v.id === formData.vehiculoId) && (
-                            <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <div className="p-4 bg-[#101318] rounded-lg border border-[#1F232A]">
                               {(() => {
                                 const vehicle = vehicles.find(v => v.id === formData.vehiculoId);
                                 if (!vehicle) return null;
@@ -563,7 +563,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                               <div className="space-y-4">
                                 <div className="space-y-3">
                                   <div className="flex justify-between items-center">
-                                    <Label className="text-gray-600">{t('financing_page.form.down_payment')} *</Label>
+                                    <Label className="text-white/50">{t('financing_page.form.down_payment')} *</Label>
                                     <span className="text-lg font-semibold text-primary">
                                       {formatPrice(downPayment)}
                                     </span>
@@ -601,8 +601,8 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
 
                               return (
                                 <div className="space-y-2">
-                                  <Label className="text-gray-600">{t('financing_page.form.amount_to_finance')}</Label>
-                                  <div className="h-10 px-3 py-2 bg-gray-50 border border-gray-200 rounded-md flex items-center">
+                                  <Label className="text-white/50">{t('financing_page.form.amount_to_finance')}</Label>
+                                  <div className="h-10 px-3 py-2 bg-[#101318] border border-[#1F232A] rounded-md flex items-center">
                                     <span className="font-bold text-foreground">
                                       {formatPrice(loanAmount)}
                                     </span>
@@ -612,7 +612,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                             })()}
 
                             <div className="space-y-2">
-                              <Label htmlFor="plazoPago" className="text-gray-600">{t('financing_page.form.payment_term')} *</Label>
+                              <Label htmlFor="plazoPago" className="text-white/50">{t('financing_page.form.payment_term')} *</Label>
                               <Select
                                 value={formData.plazoPago}
                                 onValueChange={(value) => {
@@ -621,7 +621,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 }}
                                 required
                               >
-                                <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.plazoPago ? "border-red-500" : "border-gray-200"}`}>
+                                <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.plazoPago ? "border-red-500" : "border-[#1F232A]"}`}>
                                   <SelectValue placeholder={t('financing_page.form.payment_term_placeholder')} />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -675,7 +675,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                           })()}
 
                           <div className="space-y-2">
-                            <Label htmlFor="dniNie" className="text-gray-600">{t('financing_page.form.dni_nie')} *</Label>
+                            <Label htmlFor="dniNie" className="text-white/50">{t('financing_page.form.dni_nie')} *</Label>
                             <Input
                               id="dniNie"
                               placeholder={t('financing_page.form.dni_nie_placeholder')}
@@ -685,14 +685,14 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 setErrors({ ...errors, dniNie: "" });
                               }}
                               required
-                              className={`bg-gray-50 ${errors.dniNie ? "border-red-500" : "border-gray-200"}`}
+                              className={`bg-[#101318] ${errors.dniNie ? "border-red-500" : "border-[#1F232A]"}`}
                             />
                             {errors.dniNie && <p className="text-sm text-red-500">{errors.dniNie}</p>}
                           </div>
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="nombre" className="text-gray-600">{t('financing_page.form.first_name')} *</Label>
+                              <Label htmlFor="nombre" className="text-white/50">{t('financing_page.form.first_name')} *</Label>
                               <Input
                                 id="nombre"
                                 placeholder={t('financing_page.form.first_name_placeholder')}
@@ -702,12 +702,12 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                   setErrors({ ...errors, nombre: "" });
                                 }}
                                 required
-                                className={`bg-gray-50 ${errors.nombre ? "border-red-500" : "border-gray-200"}`}
+                                className={`bg-[#101318] ${errors.nombre ? "border-red-500" : "border-[#1F232A]"}`}
                               />
                               {errors.nombre && <p className="text-sm text-red-500">{errors.nombre}</p>}
                             </div>
                             <div className="space-y-2">
-                              <Label htmlFor="apellidos" className="text-gray-600">{t('financing_page.form.last_name')} *</Label>
+                              <Label htmlFor="apellidos" className="text-white/50">{t('financing_page.form.last_name')} *</Label>
                               <Input
                                 id="apellidos"
                                 placeholder={t('financing_page.form.last_name_placeholder')}
@@ -717,7 +717,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                   setErrors({ ...errors, apellidos: "" });
                                 }}
                                 required
-                                className={`bg-gray-50 ${errors.apellidos ? "border-red-500" : "border-gray-200"}`}
+                                className={`bg-[#101318] ${errors.apellidos ? "border-red-500" : "border-[#1F232A]"}`}
                               />
                               {errors.apellidos && <p className="text-sm text-red-500">{errors.apellidos}</p>}
                             </div>
@@ -725,7 +725,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="fechaNacimiento" className="text-gray-600">{t('financing_page.form.date_of_birth')} *</Label>
+                              <Label htmlFor="fechaNacimiento" className="text-white/50">{t('financing_page.form.date_of_birth')} *</Label>
                               <Input
                                 id="fechaNacimiento"
                                 type="date"
@@ -735,12 +735,12 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                   setErrors({ ...errors, fechaNacimiento: "" });
                                 }}
                                 required
-                                className={`bg-gray-50 ${errors.fechaNacimiento ? "border-red-500" : "border-gray-200"}`}
+                                className={`bg-[#101318] ${errors.fechaNacimiento ? "border-red-500" : "border-[#1F232A]"}`}
                               />
                               {errors.fechaNacimiento && <p className="text-sm text-red-500">{errors.fechaNacimiento}</p>}
                             </div>
                             <div className="space-y-2">
-                              <Label htmlFor="estadoCivil" className="text-gray-600">{t('financing_page.form.marital_status')} *</Label>
+                              <Label htmlFor="estadoCivil" className="text-white/50">{t('financing_page.form.marital_status')} *</Label>
                               <Select
                                 value={formData.estadoCivil}
                                 onValueChange={(value) => {
@@ -749,7 +749,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 }}
                                 required
                               >
-                                <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.estadoCivil ? "border-red-500" : "border-gray-200"}`}>
+                                <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.estadoCivil ? "border-red-500" : "border-[#1F232A]"}`}>
                                   <SelectValue placeholder={t('financing_page.form.marital_status_placeholder')} />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -767,7 +767,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="numeroHijos" className="text-gray-600">{t('financing_page.form.number_of_children')}</Label>
+                              <Label htmlFor="numeroHijos" className="text-white/50">{t('financing_page.form.number_of_children')}</Label>
                               <Input
                                 id="numeroHijos"
                                 type="number"
@@ -775,11 +775,11 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 value={formData.numeroHijos}
                                 onChange={handleInputChange}
                                 min="0"
-                                className="bg-gray-50 border-gray-200"
+                                className="bg-[#101318] border-[#1F232A]"
                               />
                             </div>
                             <div className="space-y-2">
-                              <Label htmlFor="nacionalidad" className="text-gray-600">{t('financing_page.form.nationality')} *</Label>
+                              <Label htmlFor="nacionalidad" className="text-white/50">{t('financing_page.form.nationality')} *</Label>
                               <Input
                                 id="nacionalidad"
                                 placeholder={t('financing_page.form.nationality_placeholder')}
@@ -789,7 +789,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                   setErrors({ ...errors, nacionalidad: "" });
                                 }}
                                 required
-                                className={`bg-gray-50 ${errors.nacionalidad ? "border-red-500" : "border-gray-200"}`}
+                                className={`bg-[#101318] ${errors.nacionalidad ? "border-red-500" : "border-[#1F232A]"}`}
                               />
                               {errors.nacionalidad && <p className="text-sm text-red-500">{errors.nacionalidad}</p>}
                             </div>
@@ -836,7 +836,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                           })()}
 
                           <div className="space-y-2">
-                            <Label htmlFor="situacionEmpleo" className="text-gray-600">{t('financing_page.form.employment_status')} *</Label>
+                            <Label htmlFor="situacionEmpleo" className="text-white/50">{t('financing_page.form.employment_status')} *</Label>
                             <Select
                               value={formData.situacionEmpleo}
                               onValueChange={(value) => {
@@ -845,7 +845,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                               }}
                               required
                             >
-                              <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.situacionEmpleo ? "border-red-500" : "border-gray-200"}`}>
+                              <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.situacionEmpleo ? "border-red-500" : "border-[#1F232A]"}`}>
                                 <SelectValue placeholder={t('financing_page.form.employment_status_placeholder')} />
                               </SelectTrigger>
                               <SelectContent>
@@ -863,7 +863,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="antiguedadEmpleo" className="text-gray-600">{t('financing_page.form.employment_duration')}</Label>
+                              <Label htmlFor="antiguedadEmpleo" className="text-white/50">{t('financing_page.form.employment_duration')}</Label>
                               <Input
                                 id="antiguedadEmpleo"
                                 type="number"
@@ -872,24 +872,24 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 onChange={handleInputChange}
                                 min="0"
                                 step="0.5"
-                                className="bg-gray-50 border-gray-200"
+                                className="bg-[#101318] border-[#1F232A]"
                               />
                             </div>
                             <div className="space-y-2">
-                              <Label htmlFor="empresaTrabajo" className="text-gray-600">{t('financing_page.form.company_name')}</Label>
+                              <Label htmlFor="empresaTrabajo" className="text-white/50">{t('financing_page.form.company_name')}</Label>
                               <Input
                                 id="empresaTrabajo"
                                 placeholder={t('financing_page.form.company_name_placeholder')}
                                 value={formData.empresaTrabajo}
                                 onChange={handleInputChange}
-                                className="bg-gray-50 border-gray-200"
+                                className="bg-[#101318] border-[#1F232A]"
                               />
                             </div>
                           </div>
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="ingresoNetoMensual" className="text-gray-600">{t('financing_page.form.monthly_net_income')} *</Label>
+                              <Label htmlFor="ingresoNetoMensual" className="text-white/50">{t('financing_page.form.monthly_net_income')} *</Label>
                               <Input
                                 id="ingresoNetoMensual"
                                 type="number"
@@ -902,12 +902,12 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 required
                                 min="0"
                                 step="100"
-                                className={`bg-gray-50 ${errors.ingresoNetoMensual ? "border-red-500" : "border-gray-200"}`}
+                                className={`bg-[#101318] ${errors.ingresoNetoMensual ? "border-red-500" : "border-[#1F232A]"}`}
                               />
                               {errors.ingresoNetoMensual && <p className="text-sm text-red-500">{errors.ingresoNetoMensual}</p>}
                             </div>
                             <div className="space-y-2">
-                              <Label htmlFor="gastosHipotecaAlquiler" className="text-gray-600">{t('financing_page.form.mortgage_rent_expenses')}</Label>
+                              <Label htmlFor="gastosHipotecaAlquiler" className="text-white/50">{t('financing_page.form.mortgage_rent_expenses')}</Label>
                               <Input
                                 id="gastosHipotecaAlquiler"
                                 type="number"
@@ -916,7 +916,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 onChange={handleInputChange}
                                 min="0"
                                 step="50"
-                                className="bg-gray-50 border-gray-200"
+                                className="bg-[#101318] border-[#1F232A]"
                               />
                             </div>
                           </div>
@@ -963,7 +963,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="email" className="text-gray-600">{t('financing_page.form.email')} *</Label>
+                              <Label htmlFor="email" className="text-white/50">{t('financing_page.form.email')} *</Label>
                               <Input
                                 id="email"
                                 type="email"
@@ -974,14 +974,14 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                   setErrors({ ...errors, email: "" });
                                 }}
                                 required
-                                className={`bg-gray-50 ${errors.email ? "border-red-500" : "border-gray-200"}`}
+                                className={`bg-[#101318] ${errors.email ? "border-red-500" : "border-[#1F232A]"}`}
                               />
                               {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
                             </div>
                             <div className="space-y-2">
-                              <Label htmlFor="telefono" className="text-gray-600">{t('financing_page.form.phone')} *</Label>
+                              <Label htmlFor="telefono" className="text-white/50">{t('financing_page.form.phone')} *</Label>
                               <div className="flex">
-                                <div className="flex items-center px-3 bg-gray-50 border border-r-0 border-gray-200 rounded-l-md">
+                                <div className="flex items-center px-3 bg-[#101318] border border-r-0 border-[#1F232A] rounded-l-md">
                                   <span className="text-sm text-red-600 font-semibold">{getFlag()}</span>
                                 </div>
                                 <Input
@@ -994,7 +994,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                     setErrors({ ...errors, telefono: "" });
                                   }}
                                   required
-                                  className={`bg-gray-50 rounded-l-none ${errors.telefono ? "border-red-500" : "border-gray-200"}`}
+                                  className={`bg-[#101318] rounded-l-none ${errors.telefono ? "border-red-500" : "border-[#1F232A]"}`}
                                 />
                               </div>
                               {errors.telefono && <p className="text-sm text-red-500">{errors.telefono}</p>}
@@ -1002,7 +1002,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                           </div>
 
                           <div className="space-y-2">
-                            <Label htmlFor="direccion" className="text-gray-600">{t('financing_page.form.address')} *</Label>
+                            <Label htmlFor="direccion" className="text-white/50">{t('financing_page.form.address')} *</Label>
                             <Input
                               id="direccion"
                               placeholder={t('financing_page.form.address_placeholder')}
@@ -1012,14 +1012,14 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                 setErrors({ ...errors, direccion: "" });
                               }}
                               required
-                              className={`bg-gray-50 ${errors.direccion ? "border-red-500" : "border-gray-200"}`}
+                              className={`bg-[#101318] ${errors.direccion ? "border-red-500" : "border-[#1F232A]"}`}
                             />
                             {errors.direccion && <p className="text-sm text-red-500">{errors.direccion}</p>}
                           </div>
 
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="codigoPostal" className="text-gray-600">{t('financing_page.form.postal_code')} *</Label>
+                              <Label htmlFor="codigoPostal" className="text-white/50">{t('financing_page.form.postal_code')} *</Label>
                               <Input
                                 id="codigoPostal"
                                 placeholder={t('financing_page.form.postal_code_placeholder')}
@@ -1029,12 +1029,12 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                   setErrors({ ...errors, codigoPostal: "" });
                                 }}
                                 required
-                                className={`bg-gray-50 ${errors.codigoPostal ? "border-red-500" : "border-gray-200"}`}
+                                className={`bg-[#101318] ${errors.codigoPostal ? "border-red-500" : "border-[#1F232A]"}`}
                               />
                               {errors.codigoPostal && <p className="text-sm text-red-500">{errors.codigoPostal}</p>}
                             </div>
                             <div className="space-y-2">
-                              <Label htmlFor="poblacion" className="text-gray-600">{t('financing_page.form.city')} *</Label>
+                              <Label htmlFor="poblacion" className="text-white/50">{t('financing_page.form.city')} *</Label>
                               <Input
                                 id="poblacion"
                                 placeholder={t('financing_page.form.city_placeholder')}
@@ -1044,7 +1044,7 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                   setErrors({ ...errors, poblacion: "" });
                                 }}
                                 required
-                                className={`bg-gray-50 ${errors.poblacion ? "border-red-500" : "border-gray-200"}`}
+                                className={`bg-[#101318] ${errors.poblacion ? "border-red-500" : "border-[#1F232A]"}`}
                               />
                               {errors.poblacion && <p className="text-sm text-red-500">{errors.poblacion}</p>}
                             </div>
@@ -1059,12 +1059,12 @@ Gastos hipoteca/alquiler mensual: ${formData.gastosHipotecaAlquiler ? formatPric
                                   setFormData({ ...formData, acceptPrivacy: checked as boolean })
                                 }
                               />
-                              <Label htmlFor="acceptPrivacy" className="text-sm text-gray-600">
+                              <Label htmlFor="acceptPrivacy" className="text-sm text-white/50">
                                 {t('financing_page.form.accept_privacy')}{" "}
                                 <button
                                   type="button"
                                   onClick={() => setOpenPrivacyModal(true)}
-                                  className="text-primary hover:text-gray-600 underline"
+                                  className="text-primary hover:text-white/50 underline"
                                 >
                                   {t('financing_page.form.privacy_policy')}
                                 </button>.

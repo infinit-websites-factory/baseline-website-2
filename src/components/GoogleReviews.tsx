@@ -1,19 +1,14 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import googleLogo from "@/assets/google-logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 const OVERALL_RATING = 4.4;
 const TOTAL_REVIEWS = 47;
 
-const StarRating = ({ rating, size = "sm" }: { rating: number; size?: "sm" | "md" | "lg" }) => {
-  const sizeClasses = {
-    sm: "w-4 h-4",
-    md: "w-5 h-5",
-    lg: "w-6 h-6",
-  };
+const StarRating = ({ rating, size = "sm" }: { rating: number; size?: "sm" | "md" }) => {
+  const sizeClasses = { sm: "w-3.5 h-3.5", md: "w-4 h-4" };
 
   return (
     <div className="flex items-center gap-0.5">
@@ -21,9 +16,9 @@ const StarRating = ({ rating, size = "sm" }: { rating: number; size?: "sm" | "md
         const fill = Math.min(1, Math.max(0, rating - (star - 1)));
         return (
           <div key={star} className="relative">
-            <Star className={`${sizeClasses[size]} text-gray-300`} />
+            <Star className={`${sizeClasses[size]} text-white/20`} />
             <div className="absolute inset-0 overflow-hidden" style={{ width: `${fill * 100}%` }}>
-              <Star className={`${sizeClasses[size]} fill-amber-400 text-amber-400`} />
+              <Star className={`${sizeClasses[size]} fill-primary text-primary`} />
             </div>
           </div>
         );
@@ -34,110 +29,86 @@ const StarRating = ({ rating, size = "sm" }: { rating: number; size?: "sm" | "md
 
 const GoogleReviews = () => {
   const { t, language } = useLanguage();
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 3;
 
   const reviews = useMemo(() => {
     return translations[language].reviews.testimonials;
   }, [language]);
 
+  const visibleReviews = reviews.slice(startIndex, startIndex + visibleCount);
+  const canGoBack = startIndex > 0;
+  const canGoForward = startIndex + visibleCount < reviews.length;
+
   return (
-    <section className="reviews-section relative py-24 px-4 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(30,66,159,0.15),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.08),transparent_60%)]" />
-
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-        backgroundSize: '60px 60px'
-      }} />
-
-      <div className="container mx-auto max-w-7xl relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight">
+    <section className="bg-background pb-[100px]">
+      <div className="container mx-auto max-w-7xl px-4 pt-[100px] pb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-heading font-semibold text-white mb-6">
             {t('reviews.title')}
           </h2>
-          <p className="text-slate-400 text-base md:text-lg mb-10">
-            {t('reviews.subtitle')}
-          </p>
 
-          {/* Google Rating Badge */}
-          <div className="inline-flex items-center gap-5 bg-white/[0.07] backdrop-blur-xl border border-white/[0.1] rounded-2xl px-8 py-5 shadow-2xl shadow-black/20">
-            <img
-              src={googleLogo}
-              alt="Google"
-              className="w-10 h-10"
-            />
-            <div className="w-px h-12 bg-white/10" />
-            <div className="flex flex-col items-start">
-              <div className="flex items-center gap-3">
-                <span className="text-4xl font-bold text-white">{OVERALL_RATING}</span>
-                <StarRating rating={OVERALL_RATING} size="lg" />
+          {/* Google Rating Display */}
+          <div className="flex items-center justify-center gap-6">
+            <div className="flex items-center gap-2">
+              <img src={googleLogo} alt="Google" className="w-6 h-6" />
+              <div className="w-px h-6 bg-white/20"></div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-xl font-semibold text-white">{OVERALL_RATING}</span>
+                <StarRating rating={OVERALL_RATING} size="md" />
               </div>
-              <span className="text-slate-400 text-sm mt-1">
-                {t('reviews.based_on')} {TOTAL_REVIEWS} {t('reviews.reviews_count')}
-              </span>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Reviews Carousel */}
-        <div className="relative">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
+      {/* Reviews Strip */}
+      <div className="flex items-stretch border-y border-[#1F232A] bg-[#101318]">
+        {/* Left Chevron */}
+        <button
+          onClick={() => canGoBack && setStartIndex(startIndex - 1)}
+          disabled={!canGoBack}
+          className="w-[80px] flex-shrink-0 flex items-center justify-center border-r border-[#1F232A] transition-colors hover:bg-white/5"
+          aria-label="Previous reviews"
+        >
+          <ChevronLeft className={`w-6 h-6 text-white ${canGoBack ? "" : "opacity-30"}`} />
+        </button>
+
+        {/* Review Cells */}
+        {visibleReviews.map((review, index) => (
+          <div
+            key={index}
+            className="flex-1 flex flex-col justify-center border-r border-[#1F232A] p-6 hover:bg-white/[0.03] transition-colors"
           >
-            <CarouselContent className="-ml-3 md:-ml-5">
-              {reviews.map((review, index) => (
-                <CarouselItem key={index} className="pl-3 md:pl-5 basis-full">
-                  <div className="group h-full max-w-2xl mx-auto bg-white/[0.05] backdrop-blur-xl border border-white/[0.08] rounded-2xl p-7 transition-all duration-500 hover:bg-white/[0.08] hover:border-white/[0.15] hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
-                    {/* Review Header */}
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="flex items-center gap-3">
-                        <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center flex-shrink-0 ring-2 ring-white/10">
-                          <span className="text-white font-semibold text-sm">
-                            {review.name.charAt(0)}
-                          </span>
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-white text-sm">{review.name}</h3>
-                          <p className="text-xs text-slate-500">{review.date}</p>
-                        </div>
-                      </div>
-                      <img src={googleLogo} alt="" className="w-5 h-5 opacity-60" />
-                    </div>
+            <div className="flex items-start gap-3 mb-3">
+              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                <span className="text-primary font-semibold text-sm">
+                  {review.name.charAt(0)}
+                </span>
+              </div>
+              <div>
+                <h3 className="font-semibold text-white text-sm">{review.name}</h3>
+                <StarRating rating={review.rating} size="sm" />
+              </div>
+            </div>
+            <p className="text-white/70 text-sm leading-relaxed line-clamp-3">
+              "{review.review}"
+            </p>
+            <p className="text-xs text-white/50 mt-3 font-medium">
+              {t('reviews.google_review')}
+            </p>
+          </div>
+        ))}
 
-                    {/* Stars */}
-                    <div className="mb-4">
-                      <StarRating rating={review.rating} size="sm" />
-                    </div>
-
-                    {/* Review Text */}
-                    <p className="text-slate-300 text-sm leading-relaxed">
-                      {review.review}
-                    </p>
-
-                    {/* Bottom tag */}
-                    <div className="mt-5 pt-4 border-t border-white/[0.06]">
-                      <div className="flex items-center gap-1.5">
-                        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-green-400/80 fill-current">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                        </svg>
-                        <span className="text-xs text-slate-500">{t('reviews.google_review')}</span>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute -left-3 md:-left-5 top-1/2 -translate-y-1/2 bg-white/[0.08] backdrop-blur-xl border border-white/[0.1] text-white hover:bg-white/[0.15] hover:text-white w-11 h-11 shadow-xl" />
-            <CarouselNext className="absolute -right-3 md:-right-5 top-1/2 -translate-y-1/2 bg-white/[0.08] backdrop-blur-xl border border-white/[0.1] text-white hover:bg-white/[0.15] hover:text-white w-11 h-11 shadow-xl" />
-          </Carousel>
-        </div>
+        {/* Right Chevron */}
+        <button
+          onClick={() => canGoForward && setStartIndex(startIndex + 1)}
+          disabled={!canGoForward}
+          className="w-[80px] flex-shrink-0 flex items-center justify-center transition-colors hover:bg-white/5"
+          aria-label="Next reviews"
+        >
+          <ChevronRight className={`w-6 h-6 text-white ${canGoForward ? "" : "opacity-30"}`} />
+        </button>
       </div>
     </section>
   );

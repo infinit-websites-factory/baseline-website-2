@@ -130,42 +130,42 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#111] text-white py-12">
+    <footer className="bg-[#101318] text-white py-16 border-t border-[#1F232A]">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Company Info */}
           <div>
-            <div className="mb-4">
+            <div className="mb-5">
               <img
                 src={luxuryCarLogo}
                 alt="Luxury Car Logo"
-                className="h-10 object-contain"
+                className="h-9 object-contain opacity-80"
               />
             </div>
-            <p className="text-white/70 mb-4">
+            <p className="text-white/25 text-sm font-body font-light leading-relaxed">
               {t('footer.company_description')} {cityName}.
             </p>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">{t('footer.contact_title')}</h3>
+            <h3 className="text-xs font-body font-medium tracking-[0.15em] uppercase text-white/50 mb-5">{t('footer.contact_title')}</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <Phone size={16} className="text-primary" />
-                <span className="text-white/70">{getPhoneNumber()}</span>
+                <Phone size={13} className="text-white/20" />
+                <span className="text-white/35 text-sm font-body font-light">{getPhoneNumber()}</span>
               </div>
               <div className="flex items-start space-x-2">
-                <MapPin size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-white/70">{address.full}</span>
+                <MapPin size={13} className="text-white/20 flex-shrink-0 mt-0.5" />
+                <span className="text-white/35 text-sm font-body font-light">{address.full}</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">{t('footer.services_title')}</h3>
-            <ul className="space-y-2 text-white/70">
+            <h3 className="text-xs font-body font-medium tracking-[0.15em] uppercase text-white/50 mb-5">{t('footer.services_title')}</h3>
+            <ul className="space-y-2 text-white/30 text-sm font-body font-light">
               <li>{t('footer.services_list.vehicle_sales')}</li>
               <li>{t('footer.services_list.vehicle_purchase')}</li>
               <li>{t('footer.services_list.financing')}</li>
@@ -176,52 +176,52 @@ const Footer = () => {
 
           {/* Hours */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">{t('footer.hours_title')}</h3>
-            <div className="space-y-2 text-white/70">
+            <h3 className="text-xs font-body font-medium tracking-[0.15em] uppercase text-white/50 mb-5">{t('footer.hours_title')}</h3>
+            <div className="space-y-2 text-white/30 text-sm font-body font-light">
               <div className="flex items-center space-x-2">
-                <Clock size={16} className="text-primary" />
+                <Clock size={13} className="text-white/20" />
                 <span>{t('footer.hours.weekday')}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Clock size={16} className="text-primary" />
+                <Clock size={13} className="text-white/20" />
                 <span>{t('footer.hours.sunday')}</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-8 pt-8">
+        <div className="border-t border-[#1F232A] mt-10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/70">
-              {t('footer.copyright')} <a href="https://infinit.com/" target="_blank" rel="noopener noreferrer" className="underline">INFINIT</a>
+            <p className="text-white/20 text-xs font-body font-light tracking-wide">
+              {t('footer.copyright')}{' '}<a href="https://infinit.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/40 transition-colors duration-500">INFINIT</a>
             </p>
 
             {/* Legal Links */}
-            <div className="flex flex-wrap gap-4 text-sm text-white/70">
+            <div className="flex flex-wrap gap-4 text-[11px] text-white/20 font-body font-light tracking-wide">
               <button
                 onClick={() => setOpenModal('legal')}
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-white/40 transition-colors duration-500"
               >
                 {t('footer.legal.legal_notice')}
               </button>
-              <span>•</span>
+              <span className="text-white/10">·</span>
               <button
                 onClick={() => setOpenModal('privacy')}
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-white/40 transition-colors duration-500"
               >
                 {t('footer.legal.privacy_policy')}
               </button>
-              <span>•</span>
+              <span className="text-white/10">·</span>
               <button
                 onClick={() => setOpenModal('terms')}
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-white/40 transition-colors duration-500"
               >
                 {t('footer.legal.terms_conditions')}
               </button>
-              <span>•</span>
+              <span className="text-white/10">·</span>
               <button
                 onClick={() => setOpenModal('cookies')}
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-white/40 transition-colors duration-500"
               >
                 {t('footer.legal.cookies')}
               </button>
@@ -237,11 +237,11 @@ const Footer = () => {
           open={openModal === key}
           onOpenChange={() => setOpenModal(null)}
         >
-          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-[#101318] border-[#1F232A]">
             <DialogHeader>
-              <DialogTitle className="text-xl font-bold">{content.title}</DialogTitle>
+              <DialogTitle className="text-xl font-heading font-normal text-white">{content.title}</DialogTitle>
             </DialogHeader>
-            <div className="mt-4 text-sm text-muted-foreground">
+            <div className="mt-4 text-sm text-white/40 font-body font-light">
               {content.content}
             </div>
           </DialogContent>

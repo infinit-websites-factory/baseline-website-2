@@ -251,7 +251,7 @@ Kilometraje: ${formData.kilometraje} km`;
 
       <main className="flex-1">
         {/* Hero Section with Form */}
-        <section className="relative pt-36 pb-20 px-4 overflow-hidden">
+        <section className="relative pt-8 pb-20 px-4 overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0">
             <img
@@ -275,50 +275,50 @@ Kilometraje: ${formData.kilometraje} km`;
                   <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                     {t("sell_page.hero.title")}
                   </h1>
-                  <p className="text-xl text-gray-300 leading-relaxed">
+                  <p className="text-xl text-white/50 leading-relaxed">
                     {t("sell_page.hero.subtitle")}
                   </p>
                 </div>
 
                 {/* Benefits checklist */}
                 <div className="space-y-5">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-[#1F232A] hover:bg-white/10 transition-colors">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                       <Sparkles className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white mb-0.5">{t("sell_page.benefits.best_price.title")}</h3>
-                      <p className="text-gray-400 text-sm">{t("sell_page.benefits.best_price.description")}</p>
+                      <p className="text-white/35 text-sm">{t("sell_page.benefits.best_price.description")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-[#1F232A] hover:bg-white/10 transition-colors">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                       <Clock className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white mb-0.5">{t("sell_page.benefits.fast_process.title")}</h3>
-                      <p className="text-gray-400 text-sm">{t("sell_page.benefits.fast_process.description")}</p>
+                      <p className="text-white/35 text-sm">{t("sell_page.benefits.fast_process.description")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-[#1F232A] hover:bg-white/10 transition-colors">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                       <Shield className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white mb-0.5">{t("sell_page.benefits.no_commitment.title")}</h3>
-                      <p className="text-gray-400 text-sm">{t("sell_page.benefits.no_commitment.description")}</p>
+                      <p className="text-white/35 text-sm">{t("sell_page.benefits.no_commitment.description")}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-[#1F232A] hover:bg-white/10 transition-colors">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
                       <CheckCircle2 className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white mb-0.5">{t("sell_page.benefits.any_vehicle.title")}</h3>
-                      <p className="text-gray-400 text-sm">{t("sell_page.benefits.any_vehicle.description")}</p>
+                      <p className="text-white/35 text-sm">{t("sell_page.benefits.any_vehicle.description")}</p>
                     </div>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ Kilometraje: ${formData.kilometraje} km`;
 
               {/* Right side - Form */}
               <div className="lg:col-span-3">
-                <Card className="bg-white/95 backdrop-blur-md shadow-2xl border border-white/20 rounded-2xl">
+                <Card className="bg-card backdrop-blur-md border border-[#1F232A]">
                   <CardHeader className="space-y-4">
                     {currentStep === 1 && (
                       <div className="space-y-2">
@@ -356,12 +356,12 @@ Kilometraje: ${formData.kilometraje} km`;
                       <div className="space-y-6 animate-fade-in">
                         {/* Vehicle Type Toggle Buttons */}
                         <div className="space-y-2">
-                          <Label className="text-gray-600">{t("sell_page.form.vehicle_type")} {t("sell_page.form.required")}</Label>
+                          <Label className="text-white/50">{t("sell_page.form.vehicle_type")} {t("sell_page.form.required")}</Label>
                           <div className="grid grid-cols-2 gap-3">
                             <Button
                               type="button"
                               variant="outline"
-                              className={`h-10 ${formData.tipoVehiculo === "turismo" ? "bg-gray-100 hover:bg-gray-100 hover:text-foreground border-gray-300 text-foreground" : "bg-white hover:bg-gray-50 hover:text-foreground border-gray-200 text-foreground"}`}
+                              className={`h-10 ${formData.tipoVehiculo === "turismo" ? "bg-[#171B21] hover:bg-[#171B21] hover:text-foreground border-white/20 text-foreground" : "bg-backgroundhover:bg-[#101318] hover:text-foreground border-[#1F232A] text-foreground"}`}
                               onClick={() => handleSelectChange("tipoVehiculo", "turismo")}
                             >
                               {t("sell_page.form.vehicle_type_tourism")}
@@ -369,7 +369,7 @@ Kilometraje: ${formData.kilometraje} km`;
                             <Button
                               type="button"
                               variant="outline"
-                              className={`h-10 ${formData.tipoVehiculo === "industrial" ? "bg-gray-100 hover:bg-gray-100 hover:text-foreground border-gray-300 text-foreground" : "bg-white hover:bg-gray-50 hover:text-foreground border-gray-200 text-foreground"}`}
+                              className={`h-10 ${formData.tipoVehiculo === "industrial" ? "bg-[#171B21] hover:bg-[#171B21] hover:text-foreground border-white/20 text-foreground" : "bg-backgroundhover:bg-[#101318] hover:text-foreground border-[#1F232A] text-foreground"}`}
                               onClick={() => handleSelectChange("tipoVehiculo", "industrial")}
                             >
                               {t("sell_page.form.vehicle_type_industrial")}
@@ -380,7 +380,7 @@ Kilometraje: ${formData.kilometraje} km`;
                         {/* Marca - Modelo */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="space-y-2">
-                            <Label htmlFor="marca" className="text-gray-600">{t("sell_page.form.brand")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="marca" className="text-white/50">{t("sell_page.form.brand")} {t("sell_page.form.required")}</Label>
                             <Select
                               value={formData.marca}
                               onValueChange={(value) => {
@@ -390,7 +390,7 @@ Kilometraje: ${formData.kilometraje} km`;
                               required
                               disabled={!formData.tipoVehiculo}
                             >
-                              <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.marca ? "border-red-500" : "border-gray-200"}`}>
+                              <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.marca ? "border-red-500" : "border-[#1F232A]"}`}>
                                 <SelectValue placeholder={t("sell_page.form.brand_placeholder")} />
                               </SelectTrigger>
                               <SelectContent>
@@ -402,14 +402,14 @@ Kilometraje: ${formData.kilometraje} km`;
                             {errors.marca && <p className="text-sm text-red-500">{errors.marca}</p>}
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="modelo" className="text-gray-600">{t("sell_page.form.model")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="modelo" className="text-white/50">{t("sell_page.form.model")} {t("sell_page.form.required")}</Label>
                             <Input
                               id="modelo"
                               placeholder={t("sell_page.form.model_placeholder")}
                               value={formData.modelo}
                               onChange={handleInputChange}
                               required
-                              className="bg-gray-50 border-gray-200"
+                              className="bg-[#101318] border-[#1F232A]"
                             />
                           </div>
                         </div>
@@ -418,18 +418,18 @@ Kilometraje: ${formData.kilometraje} km`;
                         {formData.tipoVehiculo === "turismo" ? (
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                              <Label htmlFor="version" className="text-gray-600">{t("sell_page.form.version")} {t("sell_page.form.required")}</Label>
+                              <Label htmlFor="version" className="text-white/50">{t("sell_page.form.version")} {t("sell_page.form.required")}</Label>
                               <Input
                                 id="version"
                                 placeholder={t("sell_page.form.version_placeholder")}
                                 value={formData.version}
                                 onChange={handleInputChange}
                                 required
-                                className="bg-gray-50 border-gray-200"
+                                className="bg-[#101318] border-[#1F232A]"
                               />
                             </div>
                             <div className="space-y-2">
-                              <Label htmlFor="carroceria" className="text-gray-600">{t("sell_page.form.body_type")} {t("sell_page.form.required")}</Label>
+                              <Label htmlFor="carroceria" className="text-white/50">{t("sell_page.form.body_type")} {t("sell_page.form.required")}</Label>
                               <Select
                                 value={formData.carroceria}
                                 onValueChange={(value) => {
@@ -438,7 +438,7 @@ Kilometraje: ${formData.kilometraje} km`;
                                 }}
                                 required
                               >
-                                <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.carroceria ? "border-red-500" : "border-gray-200"}`}>
+                                <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.carroceria ? "border-red-500" : "border-[#1F232A]"}`}>
                                   <SelectValue placeholder={t("sell_page.form.body_type_placeholder")} />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -457,14 +457,14 @@ Kilometraje: ${formData.kilometraje} km`;
                           </div>
                         ) : (
                           <div className="space-y-2">
-                            <Label htmlFor="version" className="text-gray-600">{t("sell_page.form.version")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="version" className="text-white/50">{t("sell_page.form.version")} {t("sell_page.form.required")}</Label>
                             <Input
                               id="version"
                               placeholder={t("sell_page.form.version_placeholder")}
                               value={formData.version}
                               onChange={handleInputChange}
                               required
-                              className="bg-gray-50 border-gray-200"
+                              className="bg-[#101318] border-[#1F232A]"
                             />
                           </div>
                         )}
@@ -472,7 +472,7 @@ Kilometraje: ${formData.kilometraje} km`;
                         {/* Tipo de cambio - Combustible */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="space-y-2">
-                            <Label htmlFor="tipoCambio" className="text-gray-600">{t("sell_page.form.transmission")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="tipoCambio" className="text-white/50">{t("sell_page.form.transmission")} {t("sell_page.form.required")}</Label>
                             <Select
                               value={formData.tipoCambio}
                               onValueChange={(value) => {
@@ -481,7 +481,7 @@ Kilometraje: ${formData.kilometraje} km`;
                               }}
                               required
                             >
-                              <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.tipoCambio ? "border-red-500" : "border-gray-200"}`}>
+                              <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.tipoCambio ? "border-red-500" : "border-[#1F232A]"}`}>
                                 <SelectValue placeholder={t("sell_page.form.transmission_placeholder")} />
                               </SelectTrigger>
                               <SelectContent>
@@ -492,7 +492,7 @@ Kilometraje: ${formData.kilometraje} km`;
                             {errors.tipoCambio && <p className="text-sm text-red-500">{errors.tipoCambio}</p>}
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="combustible" className="text-gray-600">{t("sell_page.form.fuel")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="combustible" className="text-white/50">{t("sell_page.form.fuel")} {t("sell_page.form.required")}</Label>
                             <Select
                               value={formData.combustible}
                               onValueChange={(value) => {
@@ -501,7 +501,7 @@ Kilometraje: ${formData.kilometraje} km`;
                               }}
                               required
                             >
-                              <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.combustible ? "border-red-500" : "border-gray-200"}`}>
+                              <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.combustible ? "border-red-500" : "border-[#1F232A]"}`}>
                                 <SelectValue placeholder={t("sell_page.form.fuel_placeholder")} />
                               </SelectTrigger>
                               <SelectContent>
@@ -520,7 +520,7 @@ Kilometraje: ${formData.kilometraje} km`;
                         {/* Año - Color */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="space-y-2">
-                            <Label htmlFor="ano" className="text-gray-600">{t("sell_page.form.year")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="ano" className="text-white/50">{t("sell_page.form.year")} {t("sell_page.form.required")}</Label>
                             <Select
                               value={formData.ano}
                               onValueChange={(value) => {
@@ -529,7 +529,7 @@ Kilometraje: ${formData.kilometraje} km`;
                               }}
                               required
                             >
-                              <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.ano ? "border-red-500" : "border-gray-200"}`}>
+                              <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.ano ? "border-red-500" : "border-[#1F232A]"}`}>
                                 <SelectValue placeholder={t("sell_page.form.year_placeholder")} />
                               </SelectTrigger>
                               <SelectContent>
@@ -541,14 +541,14 @@ Kilometraje: ${formData.kilometraje} km`;
                             {errors.ano && <p className="text-sm text-red-500">{errors.ano}</p>}
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="color" className="text-gray-600">{t("sell_page.form.color")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="color" className="text-white/50">{t("sell_page.form.color")} {t("sell_page.form.required")}</Label>
                             <Input
                               id="color"
                               placeholder={t("sell_page.form.color_placeholder")}
                               value={formData.color}
                               onChange={handleInputChange}
                               required
-                              className="bg-gray-50 border-gray-200"
+                              className="bg-[#101318] border-[#1F232A]"
                             />
                           </div>
                         </div>
@@ -556,7 +556,7 @@ Kilometraje: ${formData.kilometraje} km`;
                         {/* Kilometraje - Matrícula */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="space-y-2">
-                            <Label htmlFor="kilometraje" className="text-gray-600">{t("sell_page.form.mileage")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="kilometraje" className="text-white/50">{t("sell_page.form.mileage")} {t("sell_page.form.required")}</Label>
                             <Input
                               id="kilometraje"
                               type="number"
@@ -564,17 +564,17 @@ Kilometraje: ${formData.kilometraje} km`;
                               value={formData.kilometraje}
                               onChange={handleInputChange}
                               required
-                              className="bg-gray-50 border-gray-200"
+                              className="bg-[#101318] border-[#1F232A]"
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="matricula" className="text-gray-600">{t("sell_page.form.license_plate")}</Label>
+                            <Label htmlFor="matricula" className="text-white/50">{t("sell_page.form.license_plate")}</Label>
                             <Input
                               id="matricula"
                               placeholder={t("sell_page.form.license_plate_placeholder")}
                               value={formData.matricula}
                               onChange={handleInputChange}
-                              className="bg-gray-50 border-gray-200"
+                              className="bg-[#101318] border-[#1F232A]"
                             />
                           </div>
                         </div>
@@ -595,7 +595,7 @@ Kilometraje: ${formData.kilometraje} km`;
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="space-y-6 animate-fade-in">
                         <div className="space-y-2">
-                          <Label htmlFor="cuandoVender" className="text-gray-600">{t("sell_page.form.when_to_sell")} {t("sell_page.form.required")}</Label>
+                          <Label htmlFor="cuandoVender" className="text-white/50">{t("sell_page.form.when_to_sell")} {t("sell_page.form.required")}</Label>
                           <Select
                             value={formData.cuandoVender}
                             onValueChange={(value) => {
@@ -604,7 +604,7 @@ Kilometraje: ${formData.kilometraje} km`;
                             }}
                             required
                           >
-                            <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.cuandoVender ? "border-red-500" : "border-gray-200"}`}>
+                            <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.cuandoVender ? "border-red-500" : "border-[#1F232A]"}`}>
                               <SelectValue placeholder={t("sell_page.form.when_to_sell_placeholder")} />
                             </SelectTrigger>
                             <SelectContent>
@@ -618,7 +618,7 @@ Kilometraje: ${formData.kilometraje} km`;
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="interesIntercambio" className="text-gray-600">{t("sell_page.form.interested_trade")} {t("sell_page.form.required")}</Label>
+                          <Label htmlFor="interesIntercambio" className="text-white/50">{t("sell_page.form.interested_trade")} {t("sell_page.form.required")}</Label>
                           <Select
                             value={formData.interesIntercambio}
                             onValueChange={(value) => {
@@ -627,7 +627,7 @@ Kilometraje: ${formData.kilometraje} km`;
                             }}
                             required
                           >
-                            <SelectTrigger className={`bg-gray-50 data-[placeholder]:text-muted-foreground ${errors.interesIntercambio ? "border-red-500" : "border-gray-200"}`}>
+                            <SelectTrigger className={`bg-[#101318] data-[placeholder]:text-muted-foreground ${errors.interesIntercambio ? "border-red-500" : "border-[#1F232A]"}`}>
                               <SelectValue placeholder={t("sell_page.form.interested_trade_placeholder")} />
                             </SelectTrigger>
                             <SelectContent>
@@ -640,7 +640,7 @@ Kilometraje: ${formData.kilometraje} km`;
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="space-y-2">
-                            <Label htmlFor="nombre" className="text-gray-600">{t("sell_page.form.first_name")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="nombre" className="text-white/50">{t("sell_page.form.first_name")} {t("sell_page.form.required")}</Label>
                             <Input
                               id="nombre"
                               name="nombre"
@@ -648,11 +648,11 @@ Kilometraje: ${formData.kilometraje} km`;
                               value={formData.nombre}
                               onChange={handleInputChange}
                               required
-                              className="bg-gray-50 border-gray-200"
+                              className="bg-[#101318] border-[#1F232A]"
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="apellido" className="text-gray-600">{t("sell_page.form.last_name")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="apellido" className="text-white/50">{t("sell_page.form.last_name")} {t("sell_page.form.required")}</Label>
                             <Input
                               id="apellido"
                               name="apellido"
@@ -660,14 +660,14 @@ Kilometraje: ${formData.kilometraje} km`;
                               value={formData.apellido}
                               onChange={handleInputChange}
                               required
-                              className="bg-gray-50 border-gray-200"
+                              className="bg-[#101318] border-[#1F232A]"
                             />
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="space-y-2">
-                            <Label htmlFor="email" className="text-gray-600">{t("sell_page.form.email")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="email" className="text-white/50">{t("sell_page.form.email")} {t("sell_page.form.required")}</Label>
                             <Input
                               id="email"
                               name="email"
@@ -676,13 +676,13 @@ Kilometraje: ${formData.kilometraje} km`;
                               value={formData.email}
                               onChange={handleInputChange}
                               required
-                              className="bg-gray-50 border-gray-200"
+                              className="bg-[#101318] border-[#1F232A]"
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="telefono" className="text-gray-600">{t("sell_page.form.phone")} {t("sell_page.form.required")}</Label>
+                            <Label htmlFor="telefono" className="text-white/50">{t("sell_page.form.phone")} {t("sell_page.form.required")}</Label>
                             <div className="flex">
-                              <div className="flex items-center px-3 bg-gray-50 border border-r-0 border-gray-200 rounded-l-md">
+                              <div className="flex items-center px-3 bg-[#101318] border border-r-0 border-[#1F232A] rounded-l-md">
                                 <span className="text-sm text-red-600 font-semibold">{getFlag()}</span>
                               </div>
                               <Input
@@ -693,7 +693,7 @@ Kilometraje: ${formData.kilometraje} km`;
                                 value={formData.telefono}
                                 onChange={handleInputChange}
                                 required
-                                className="bg-gray-50 border-gray-200 rounded-l-none"
+                                className="bg-[#101318] border-[#1F232A] rounded-l-none"
                               />
                             </div>
                           </div>
@@ -708,12 +708,12 @@ Kilometraje: ${formData.kilometraje} km`;
                                 setFormData({ ...formData, acceptPrivacy: checked as boolean })
                               }
                             />
-                            <Label htmlFor="acceptPrivacy" className="text-sm text-gray-600">
+                            <Label htmlFor="acceptPrivacy" className="text-sm text-white/50">
                               {t("sell_page.form.accept_privacy")}{" "}
                               <button
                                 type="button"
                                 onClick={() => setOpenPrivacyModal(true)}
-                                className="text-primary hover:text-gray-600 underline"
+                                className="text-primary hover:text-white/50 underline"
                               >
                                 {t("sell_page.form.privacy_policy")}
                               </button>.
@@ -768,7 +768,7 @@ Kilometraje: ${formData.kilometraje} km`;
                   {currentStep === 3 && (
                     <div className="space-y-6">
                       <div className="space-y-6 text-center py-8 animate-fade-in">
-                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                        <div className="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center mx-auto">
                           <CheckCircle className="w-10 h-10 text-green-600" />
                         </div>
 

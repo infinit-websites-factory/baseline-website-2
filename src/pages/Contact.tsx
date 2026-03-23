@@ -128,7 +128,7 @@ const Contact = () => {
 
       {/* Hero Section with Form */}
       <div
-        className="relative bg-gray-700 pt-36"
+        className="relative bg-background pt-8"
         style={{
           backgroundImage: `url(${contactBackground})`,
           backgroundRepeat: 'no-repeat',
@@ -149,11 +149,11 @@ const Contact = () => {
       {/* Contact Form Section */}
       <section className="py-8 px-4 bg-background">
         <div className="container mx-auto max-w-2xl">
-          <Card className="bg-white shadow-xl border-0 -mt-48 relative z-10">
+          <Card className="bg-[#101318] border border-[#1F232A] -mt-48 relative z-10">
             <CardContent className="p-8">
               {isSubmitted ? (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-green-100 flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-green-900/30 flex items-center justify-center">
                     <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -186,26 +186,26 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="nombre" className="text-gray-600">{t('contact_page.form.name')}</Label>
+                      <Label htmlFor="nombre" className="text-white/50">{t('contact_page.form.name')}</Label>
                       <Input
                         id="nombre"
                         name="nombre"
                         value={formData.nombre}
                         onChange={handleInputChange}
                         required
-                        className="bg-gray-50 border-gray-200"
+                        className="bg-[#101318] border-[#1F232A]"
                         placeholder={t('contact_page.form.name_placeholder')}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="apellido" className="text-gray-600">{t('contact_page.form.surname')}</Label>
+                      <Label htmlFor="apellido" className="text-white/50">{t('contact_page.form.surname')}</Label>
                       <Input
                         id="apellido"
                         name="apellido"
                         value={formData.apellido}
                         onChange={handleInputChange}
                         required
-                        className="bg-gray-50 border-gray-200"
+                        className="bg-[#101318] border-[#1F232A]"
                         placeholder={t('contact_page.form.surname_placeholder')}
                       />
                     </div>
@@ -213,7 +213,7 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-gray-600">{t('contact_page.form.email')}</Label>
+                      <Label htmlFor="email" className="text-white/50">{t('contact_page.form.email')}</Label>
                       <Input
                         id="email"
                         name="email"
@@ -221,14 +221,14 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="bg-gray-50 border-gray-200"
+                        className="bg-[#101318] border-[#1F232A]"
                         placeholder={t('contact_page.form.email_placeholder')}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="telefono" className="text-gray-600">{t('contact_page.form.phone')}</Label>
+                      <Label htmlFor="telefono" className="text-white/50">{t('contact_page.form.phone')}</Label>
                       <div className="flex">
-                        <div className="flex items-center px-3 bg-gray-50 border border-r-0 border-gray-200 rounded-l-md">
+                        <div className="flex items-center px-3 bg-[#101318] border border-r-0 border-[#1F232A] rounded-l-md">
                           <span className="text-sm text-red-600 font-semibold">{getFlag()}</span>
                         </div>
                         <Input
@@ -238,7 +238,7 @@ const Contact = () => {
                           value={formData.telefono}
                           onChange={handleInputChange}
                           required
-                          className="bg-gray-50 border-gray-200 rounded-l-none"
+                          className="bg-[#101318] border-[#1F232A] rounded-l-none"
                           placeholder={t('contact_page.form.phone_placeholder')}
                         />
                       </div>
@@ -246,7 +246,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="mensaje" className="text-gray-600">{t('contact_page.form.message')}</Label>
+                    <Label htmlFor="mensaje" className="text-white/50">{t('contact_page.form.message')}</Label>
                     <Textarea
                       id="mensaje"
                       name="mensaje"
@@ -255,7 +255,7 @@ const Contact = () => {
                       required
                       rows={5}
                       placeholder={t('contact_page.form.message_placeholder')}
-                      className="bg-gray-50 border-gray-200"
+                      className="bg-[#101318] border-[#1F232A]"
                     />
                   </div>
 
@@ -268,12 +268,12 @@ const Contact = () => {
                           setFormData({ ...formData, acceptMarketing: checked as boolean })
                         }
                       />
-                      <Label htmlFor="acceptMarketing" className="text-sm text-gray-600">
+                      <Label htmlFor="acceptMarketing" className="text-sm text-white/50">
                         {t('contact_page.form.accept_marketing')}{" "}
                         <button
                           type="button"
                           onClick={() => setOpenPrivacyModal(true)}
-                          className="text-primary hover:text-gray-600 underline"
+                          className="text-primary hover:text-white/50 underline"
                         >
                           {t('contact_page.form.privacy_policy')}
                         </button>.
@@ -321,7 +321,7 @@ const Contact = () => {
                   <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 h-full">
                     <div className="flex items-start gap-6">
                       <div className="w-14 h-14 shrink-0 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
-                        <IconComponent className="w-7 h-7 text-black" />
+                        <IconComponent className="w-7 h-7 text-primary-foreground" />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-lg font-bold text-white mb-1">
@@ -330,7 +330,7 @@ const Contact = () => {
                         <p className="text-white/60 text-sm leading-relaxed">
                           {info.description}
                         </p>
-                        <div className="mt-4 pt-4 border-t border-white/10">
+                        <div className="mt-4 pt-4 border-t border-[#1F232A]">
                           <span className="text-white font-semibold text-lg group-hover:text-primary transition-colors">
                             {info.contact}
                           </span>
@@ -346,7 +346,7 @@ const Contact = () => {
       </section>
 
       {/* Location Section */}
-      <section className="py-16 px-4 bg-muted">
+      <section className="py-16 px-4 bg-[#101318]">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Address Information */}
@@ -358,7 +358,7 @@ const Contact = () => {
               <div className="space-y-6">
                 <div className="flex items-start space-x-3">
                   <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-black" />
+                    <MapPin className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
@@ -373,7 +373,7 @@ const Contact = () => {
 
                 <div className="flex items-start space-x-3">
                   <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-black" />
+                    <Clock className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
@@ -391,7 +391,7 @@ const Contact = () => {
 
             {/* Google Map */}
             <div className="w-full">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="border border-[#1F232A] overflow-hidden">
                 <iframe
                   src={address.mapsEmbedUrl}
                   width="100%"

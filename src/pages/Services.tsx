@@ -40,7 +40,7 @@ const Services = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-muted">
+      <section className="py-16 px-4 bg-[#101318] mt-24">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -73,10 +73,10 @@ const Services = () => {
               return (
                 <div
                   key={index}
-                  className="group backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2"
+                  className="group backdrop-blur-md bg-white/5 border border-[#1F232A] rounded-2xl p-8 hover:bg-white/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className="w-14 h-14 mx-auto mb-6 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                    <IconComponent className="w-7 h-7 text-primary group-hover:text-black transition-colors duration-300" />
+                    <IconComponent className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                   </div>
                   <h3 className="text-lg font-bold text-white text-center mb-4">
                     {service.title}
@@ -108,7 +108,7 @@ const Services = () => {
             </div>
 
             {/* Content Side */}
-            <div className="bg-[#111] flex items-center">
+            <div className="bg-[#101318] flex items-center">
               <div className="px-8 py-16 lg:px-16 lg:py-20 space-y-8">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
                   <Car className="w-4 h-4" />

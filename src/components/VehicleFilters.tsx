@@ -65,7 +65,7 @@ const VehicleFilters = ({
     safeYearRange[0] > 2000 || safeYearRange[1] < new Date().getFullYear();
 
   return (
-    <div className="bg-secondary/50 p-6 rounded-lg space-y-6">
+    <div className="bg-background border border-[#1F232A] p-6 space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold">{t('filters.title')}</h3>
                 {hasActiveFilters && (
